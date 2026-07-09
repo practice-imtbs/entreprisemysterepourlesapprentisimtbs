@@ -1,0 +1,576 @@
+{
+  "meta": {
+    "annee": "2026-2027",
+    "titre": "L'Entreprise Mystère",
+    "sousTitre": "Académie de l'Alternance — Journée de rentrée des apprentis",
+    "codeFinal": "ALT726",
+    "fragments": ["AL", "T7", "26"],
+    "alerteDelaiSec": 8,
+    "dureeCibleMinParDossier": 15,
+    "contactMail": "career-center@imt-bs.eu"
+  },
+
+  "intro": {
+    "messages": [
+      "Félicitations, agent. Votre contrat est signé. Vous intégrez officiellement l'Académie de l'Alternance.",
+      "Mais avant de prendre vos fonctions, vous devez prouver que vous connaissez les règles du jeu.",
+      "Trois dossiers vous attendent. Bonne chance."
+    ]
+  },
+
+  "calendrier": {
+    "titre": "Le calendrier de l'agent",
+    "sousTitre": "5 dates critiques à ne pas rater",
+    "punaises": [
+      {
+        "id": "edusign",
+        "couleur": "rouge",
+        "periode": "À chaque cours",
+        "action": "Émarger sur Edusign dans le cours.",
+        "consequence": "Sans émargement → absence signalée à l'employeur."
+      },
+      {
+        "id": "sfp",
+        "couleur": "orange",
+        "periode": "Dès la rentrée si sans contrat",
+        "action": "Activer le statut SFP auprès du CFA (formulaire P2S / Typhaine MILLOT ou Adeline PUJOL).",
+        "consequence": "Délai : mi-novembre PGE / fin octobre Bachelor. Au-delà, les seules options sont la césure ou l'arrêt de formation.",
+        "echeanceParProgramme": { "bachelor": "fin octobre", "pge": "mi-novembre" }
+      },
+      {
+        "id": "objectif",
+        "couleur": "bleu",
+        "periode": "Avant la mi-novembre",
+        "action": "Signer le contrat d'objectif sur 1J1A (3 signataires) ET la rencontre tuteur école (2 signataires).",
+        "consequence": "Sans ces documents : pas de protection en cas de litige."
+      },
+      {
+        "id": "visite1",
+        "couleur": "vert",
+        "periode": "Avant le 28 février",
+        "action": "1ère visite entreprise signée par les 3 parties + 1ère évaluation entreprise signée.",
+        "consequence": "Relancer activement le tuteur si retard."
+      },
+      {
+        "id": "visite2",
+        "couleur": "vertfonce",
+        "periode": "Avant le 30 août",
+        "action": "2ème visite entreprise + 2ème évaluation.",
+        "consequence": "Note obligatoire pour valider le diplôme en dernière année (PGE3 / B3)."
+      }
+    ]
+  },
+
+  "annuaire": {
+    "titre": "L'annuaire de l'agence",
+    "sousTitre": "Répertoire confidentiel — 10 fiches contact",
+    "fiches": [
+      {
+        "id": "pole-alternance",
+        "nom": "Pôle alternance / service apprentissage",
+        "role": "1er interlocuteur",
+        "quand": "Pour TOUTE question liée à l'apprentissage, avant les coordinatrices et les enseignants.",
+        "priorite": true,
+        "programmes": ["bachelor", "pge"]
+      },
+      {
+        "id": "millot",
+        "nom": "Typhaine MILLOT",
+        "role": "CFA — référente Bachelor",
+        "quand": "Questions administratives et financières, procédure de rupture, statut SFP — uniquement pour les Bachelors.",
+        "programmes": ["bachelor"]
+      },
+      {
+        "id": "pujol",
+        "nom": "Adeline PUJOL",
+        "role": "CFA — référente PGE",
+        "quand": "Questions administratives et financières, procédure de rupture, statut SFP — uniquement pour les PGE.",
+        "programmes": ["pge"]
+      },
+      {
+        "id": "cavard",
+        "nom": "Mme CAVARD",
+        "role": "Coordinatrice Bachelor",
+        "quand": "Suivi pédagogique, absences, justificatifs.",
+        "programmes": ["bachelor"]
+      },
+      {
+        "id": "marland",
+        "nom": "Mme MARLAND DELPIERRE",
+        "role": "Coordinatrice PGE2",
+        "quand": "Suivi pédagogique, absences, justificatifs — PGE2.",
+        "programmes": ["pge"]
+      },
+      {
+        "id": "pge3",
+        "nom": "Mme ANTUNES · Mme VANG · Mme HERIZI",
+        "role": "Coordinatrices PGE3 — selon votre majeure",
+        "quand": "Mme ANTUNES (MISI) · Mme VANG (MSET/DDDM/MEIA) · Mme HERIZI (BDIAT). Suivi pédagogique, absences, justificatifs.",
+        "programmes": ["pge"]
+      },
+      {
+        "id": "darrac",
+        "nom": "Elodie DARRAC",
+        "role": "Référente handicap",
+        "quand": "Accompagnement individualisé en situation de handicap.",
+        "email": "e.darrac@cfa-eve.fr",
+        "tel": "01 60 79 54 00",
+        "programmes": ["bachelor", "pge"]
+      },
+      {
+        "id": "accompagnement",
+        "nom": "Pôle Accompagnement étudiant IMT-BS",
+        "role": "Soutien étudiant",
+        "quand": "Difficultés de tous ordres : financières, personnelles, santé.",
+        "programmes": ["bachelor", "pge"]
+      },
+      {
+        "id": "medical",
+        "nom": "Pôle médical IMT-BS",
+        "role": "Infirmière — Mme GALLINEAU",
+        "quand": "Questions de santé sur le campus.",
+        "programmes": ["bachelor", "pge"]
+      },
+      {
+        "id": "tuteur-ecole",
+        "nom": "Tuteur école",
+        "role": "Votre référent pédagogique individuel",
+        "quand": "Suivi d'intégration, rencontres confidentielles, médiation entreprise. Contact par mail.",
+        "programmes": ["bachelor", "pge"]
+      }
+    ]
+  },
+
+  "questions": {
+    "q1": {
+      "num": 1,
+      "type": "qcm",
+      "multi": false,
+      "enonce": "C'est ton premier jour à l'école. Tu arrives et tu ne sais pas encore à qui t'adresser pour valider ton dossier. Vers qui te diriges-tu EN PREMIER ?",
+      "options": [
+        { "id": "A", "text": "Ton professeur principal" },
+        { "id": "B", "text": "Ta coordinatrice pédagogique" },
+        { "id": "C", "text": "Le pôle alternance / service apprentissage" },
+        { "id": "D", "text": "La direction de l'école" }
+      ],
+      "correct": ["C"],
+      "indice": "Consultez l'annuaire de l'agence 📞 : qui y est indiqué comme 1er interlocuteur ?",
+      "retenir": "Toute question relative à l'apprentissage doit être posée en priorité au pôle alternance, avant les coordinatrices et les enseignants. C'est l'interlocuteur de référence pour tout ce qui concerne le statut d'apprenti."
+    },
+    "q2": {
+      "num": 2,
+      "type": "qcm",
+      "multi": false,
+      "enonce": "Pour justifier ta présence en cours, tu dois émarger sur une plateforme. Laquelle ?",
+      "options": [
+        { "id": "A", "text": "Moodle" },
+        { "id": "B", "text": "Edusign" },
+        { "id": "C", "text": "1 Jeune 1 Alternance" },
+        { "id": "D", "text": "Mon espace CFA" }
+      ],
+      "correct": ["B"],
+      "indice": "La punaise rouge du calendrier de l'agent 📅 mentionne cette plateforme.",
+      "retenir": "L'émargement se fait obligatoirement sur Edusign, à chaque début de cours, le plus souvent dans les 15 premières minutes. Sans émargement valide, l'absence peut être signalée à l'employeur et entraîner une retenue sur salaire."
+    },
+    "q3": {
+      "num": 3,
+      "type": "vraifaux",
+      "enonce": "Lors de l'émargement sur Edusign, tu peux signer avec tes initiales ou dessiner quelque chose à la place d'une vraie signature.",
+      "correct": false,
+      "indice": "Relisez la page 2 du dossier Edusign : quel type de signature est demandé ?",
+      "retenir": "Il s'agit d'une signature officielle. Aucun dessin, initiales ou simple « OK » ne sont acceptés. Si la signature n'est pas conforme, l'émargement peut être invalidé et l'absence signalée à l'employeur."
+    },
+    "q4": {
+      "num": 4,
+      "type": "ordre",
+      "enonce": "Tu es malade ce matin et tu ne peux pas venir en cours. Remets ces 4 actions dans le bon ordre.",
+      "items": [
+        { "id": "A", "text": "Consulter un médecin — demander un ARRÊT DE TRAVAIL (pas un certificat)" },
+        { "id": "B", "text": "Prévenir ta coordinatrice pédagogique" },
+        { "id": "C", "text": "Prévenir ton employeur" },
+        { "id": "D", "text": "Transmettre l'arrêt de travail via Edusign dans les 48h" }
+      ],
+      "correct": ["B", "C", "A", "D"],
+      "indice": "Premier réflexe : prévenir l'école et l'employeur au plus tôt, avant toute autre démarche.",
+      "retenir": "Un certificat médical ne suffit pas ! Il faut un arrêt de travail en précisant au médecin que l'on est salarié·e. Sans arrêt de travail transmis sous 48h, l'absence peut être non justifiée → retenue sur salaire possible."
+    },
+    "q5": {
+      "num": 5,
+      "type": "matching",
+      "enonce": "Relie chaque situation à la bonne procédure.",
+      "left": [
+        { "id": "A", "text": "RDV spécialiste un mardi (semaine école)" },
+        { "id": "B", "text": "Convocation préfecture un jeudi (semaine école)" },
+        { "id": "C", "text": "Enseignant passe le cours en visio à la dernière minute" },
+        { "id": "D", "text": "Tu arrives en retard de 20 min en cours" }
+      ],
+      "right": [
+        { "id": "1", "text": "RDV à prendre sur une semaine entreprise (ne justifie pas une absence)" },
+        { "id": "2", "text": "Transmettre la convocation officielle à la coordinatrice" },
+        { "id": "3", "text": "Être présent à l'école (salle prévue) — à domicile = pas couvert en cas d'accident" },
+        { "id": "4", "text": "Prévenir la coordinatrice + fournir un justificatif" }
+      ],
+      "correct": { "A": "1", "B": "2", "C": "3", "D": "4" },
+      "indice": "Semaine école = vous êtes salarié·e : tout retard ou absence injustifiée est signalé à l'employeur.",
+      "retenir": "Semaine école = on est salarié. L'employeur est informé de tout retard ou absence injustifiée. Ces 4 situations sont parmi les plus fréquentes rencontrées par les apprentis."
+    },
+    "q6": {
+      "num": 6,
+      "type": "qcm",
+      "multi": false,
+      "enonce": "Ton justificatif d'absence doit être transmis sur Edusign et à l'employeur sous combien de temps ?",
+      "options": [
+        { "id": "A", "text": "24 heures" },
+        { "id": "B", "text": "48 heures" },
+        { "id": "C", "text": "72 heures" },
+        { "id": "D", "text": "1 semaine" }
+      ],
+      "correct": ["B"],
+      "indice": "Relisez la page 3 du dossier Edusign (justifier une absence).",
+      "retenir": "Passé ce délai, l'absence peut être considérée comme injustifiée avec des conséquences pédagogiques et financières."
+    },
+    "q7": {
+      "num": 7,
+      "type": "vraifaux",
+      "enonce": "Lorsque tu es en semaine de formation à l'école, tu es toujours considéré comme un salarié de ton entreprise.",
+      "correct": true,
+      "indice": "Qui paie votre formation et vous verse un salaire, même pendant les cours ?",
+      "retenir": "C'est une spécificité clé de l'apprentissage : l'employeur paie la formation et verse un salaire. L'apprenti est donc salarié même en cours, ce qui implique les mêmes obligations professionnelles (ponctualité, tenue, comportement) qu'en entreprise."
+    },
+    "q8": {
+      "num": 8,
+      "type": "qcm",
+      "multi": false,
+      "enonce": "C'est ton premier jour en entreprise. Ton tuteur est absent toute la journée et personne ne t'a expliqué tes missions. Que fais-tu ?",
+      "options": [
+        { "id": "A", "text": "Tu attends que quelqu'un vienne te voir" },
+        { "id": "B", "text": "Tu contactes le pôle alternance pour signaler le problème" },
+        { "id": "C", "text": "Tu prends l'initiative de contacter le manager ou les RH pour te présenter et demander les instructions" },
+        { "id": "D", "text": "Tu rentres chez toi car rien n'est prévu" }
+      ],
+      "correct": ["C"],
+      "indice": "Quelle attitude montre votre proactivité dès le premier jour ?",
+      "retenir": "L'initiative et la proactivité sont des qualités essentielles. Rester sans rien faire ou partir créerait une très mauvaise première impression. Le pôle alternance est un recours si la situation persiste plusieurs jours, pas le premier réflexe."
+    },
+    "q9": {
+      "num": 9,
+      "type": "matching",
+      "enonce": "Relie chaque comportement à son évaluation : À valoriser ✅ ou À éviter ❌",
+      "left": [
+        { "id": "A", "text": "Arriver 10 min en retard sans prévenir, régulièrement" },
+        { "id": "B", "text": "Poser des questions à son tuteur sur ses missions" },
+        { "id": "C", "text": "Activer sa caméra lors des visios en télétravail" },
+        { "id": "D", "text": "Prendre des notes lors des briefings d'équipe" },
+        { "id": "E", "text": "S'habiller en tenue décontractée le premier jour" }
+      ],
+      "right": [
+        { "id": "OK", "text": "✅ À valoriser" },
+        { "id": "KO", "text": "❌ À éviter" }
+      ],
+      "correct": { "A": "KO", "B": "OK", "C": "OK", "D": "OK", "E": "KO" },
+      "indice": "Pensez « première impression » : ponctualité, tenue, communication active.",
+      "retenir": "L'intégration repose sur des comportements qui forgent la réputation dès les premiers jours. Ponctualité, tenue professionnelle le premier jour (puis s'adapter aux codes de l'entreprise), prise de notes et communication active sont observés de très près."
+    },
+    "q10": {
+      "num": 10,
+      "type": "qcm",
+      "multi": true,
+      "enonce": "Sur la route, il y a un accident. Je vais probablement arriver en retard au travail. Qu'est-ce que je fais ? (plusieurs réponses)",
+      "options": [
+        { "id": "A", "text": "Je préviens mon tuteur de ce retard" },
+        { "id": "B", "text": "En arrivant, je m'excuse et propose de rattraper le temps manqué à une autre période (soir, lendemain, etc.)" },
+        { "id": "C", "text": "Je ne préviens pas et m'excuserai en arrivant" },
+        { "id": "D", "text": "Je ne fais rien" }
+      ],
+      "correct": ["A", "B"],
+      "indice": "Deux bons réflexes : prévenir tout de suite + proposer une solution pour rattraper.",
+      "retenir": "Mon comportement en entreprise doit être irréprochable. Un problème peut arriver, mais il est important d'avoir un comportement adapté (prévenir, anticiper, être proactif pour récupérer). Cela montre mon professionnalisme."
+    },
+    "q11": {
+      "num": 11,
+      "type": "vraifaux",
+      "enonce": "Si tu n'as pas rempli ton contrat d'objectif et que tes missions ne correspondent pas à ce qui était prévu, le tuteur école peut quand même facilement défendre ta situation.",
+      "correct": false,
+      "indice": "Sans document signé par toutes les parties, c'est parole contre parole.",
+      "retenir": "Sans contrat d'objectif signé, la situation devient « parole contre parole ». Avec le document signé par toutes les parties, le tuteur dispose d'une base officielle pour exiger le respect des engagements. Tu dois le remplir en premier, puis ton tuteur entreprise, avant la mi-novembre."
+    },
+    "q12": {
+      "num": 12,
+      "type": "qcm",
+      "multi": true,
+      "enonce": "Je souhaite poser des congés. Comment faire ? (plusieurs réponses)",
+      "options": [
+        { "id": "A", "text": "Je pose directement mes congés avec l'outil interne utilisé, sans me référer à personne" },
+        { "id": "B", "text": "Je vérifie avec mes collègues que la période envisagée est correcte" },
+        { "id": "C", "text": "J'anticipe en demandant à mon responsable son accord" }
+      ],
+      "correct": ["B", "C"],
+      "indice": "Deux validations comptent : votre responsable ET l'équipe.",
+      "retenir": "L'employeur peut m'imposer tout ou partie de mes congés. Afin d'être certain que la période envisagée ne désorganise pas le travail de l'équipe, et dans une optique de transparence, j'en parle autour de moi et attends une confirmation officielle avant de poser les jours."
+    },
+    "q13": {
+      "num": 13,
+      "type": "ordre",
+      "enonce": "Pour remplir ton contrat d'objectif, remets ces étapes dans le bon ordre.",
+      "items": [
+        { "id": "A", "text": "Signer le contrat d'objectif avant la mi-novembre" },
+        { "id": "B", "text": "Se connecter sur 1 Jeune 1 Alternance" },
+        { "id": "C", "text": "Faire le point avec son tuteur entreprise sur les missions" },
+        { "id": "D", "text": "Aller dans « Carnet de liaison » → « Contrat d'objectif »" },
+        { "id": "E", "text": "Remplir les informations demandées" }
+      ],
+      "correct": ["B", "D", "C", "E", "A"],
+      "indice": "Tout commence par la connexion à la plateforme 1 Jeune 1 Alternance.",
+      "retenir": "Le contrat d'objectif se remplit dès les premières semaines. Il protège l'apprenti et structure la relation avec le tuteur entreprise sur toute l'année."
+    },
+    "q14": {
+      "num": 14,
+      "type": "qcm",
+      "multi": false,
+      "enonce": "Ton manager te demande de rester jusqu'à 20h alors que tu as cours à 8h le lendemain (semaine école). Comment réagis-tu ?",
+      "options": [
+        { "id": "A", "text": "Tu restes sans rien dire pour faire bonne impression" },
+        { "id": "B", "text": "Tu expliques poliment que tu as cours le lendemain et que tu dois partir à une heure raisonnable" },
+        { "id": "C", "text": "Tu pars sans explication" },
+        { "id": "D", "text": "Tu demandes à ton tuteur d'appeler l'école pour justifier ton absence demain" }
+      ],
+      "correct": ["B"],
+      "indice": "Les semaines école sont contractuelles — l'employeur connaît votre statut.",
+      "retenir": "L'apprenti est salarié ET étudiant. Les semaines école sont contractuelles. La communication respectueuse est toujours la meilleure approche. L'employeur connaît le statut et doit respecter le rythme alternance."
+    },
+    "q15": {
+      "num": 15,
+      "type": "qcm",
+      "multi": true,
+      "enonce": "Nexus Corp veut te garder une semaine entière alors que c'est ta semaine école. Ils évoquent un projet urgent. C'est légal ? Que fais-tu ? (plusieurs réponses)",
+      "options": [
+        { "id": "A", "text": "Tu acceptes pour faire bonne impression" },
+        { "id": "B", "text": "Tu refuses catégoriquement sans explication" },
+        { "id": "C", "text": "Tu expliques que le planning est contractuel et tu alertes le pôle alternance" },
+        { "id": "D", "text": "Toute modification doit faire l'objet d'une demande écrite au service apprentissage au moins une semaine avant" }
+      ],
+      "correct": ["C", "D"],
+      "indice": "Deux réponses complémentaires : alerter + demande écrite préalable.",
+      "retenir": "Le rythme alternance est fixé dans le contrat. L'employeur ne peut pas le modifier unilatéralement. Toute demande exceptionnelle doit être formulée par écrit au service apprentissage au moins une semaine à l'avance. Le service se réserve le droit d'accepter ou non."
+    },
+    "q16": {
+      "num": 16,
+      "type": "ordre",
+      "enonce": "Tu n'as pas reçu ta rémunération ce mois-ci. Quelles étapes activer, dans le bon ordre ?",
+      "items": [
+        { "id": "A", "text": "Contacter le pôle alternance si la situation persiste" },
+        { "id": "B", "text": "Vérifier ton bulletin de salaire (absence injustifiée ? congé ?)" },
+        { "id": "C", "text": "Contacter le tuteur entreprise ou les RH" },
+        { "id": "D", "text": "Contacter le CFA (Typhaine MILLOT / Adeline PUJOL)" },
+        { "id": "E", "text": "Garder une trace écrite de toutes tes démarches" }
+      ],
+      "correct": ["B", "C", "A", "D", "E"],
+      "indice": "Commencez toujours par vérifier votre bulletin de salaire.",
+      "retenir": "Commencer toujours par vérifier son bulletin. Dans la majorité des cas, une retenue est liée à une absence injustifiée. Si ce n'est pas le cas, l'employeur est tenu de payer. Conserver une trace écrite de toutes les démarches."
+    },
+    "q17": {
+      "num": 17,
+      "type": "ordre",
+      "enonce": "Le dialogue est totalement rompu avec ton tuteur depuis plusieurs semaines. Tu te sens mis à l'écart et sans mission. Quels sont tes recours, et dans quel ordre les activer ?",
+      "items": [
+        { "id": "A", "text": "Tenter un dialogue direct et calme avec le tuteur entreprise" },
+        { "id": "B", "text": "Alerter le tuteur école (rencontre confidentielle — le tuteur entreprise n'a pas accès au CR)" },
+        { "id": "C", "text": "Saisir le pôle alternance pour une médiation formelle" }
+      ],
+      "correct": ["A", "B", "C"],
+      "indice": "La règle d'or : escalade progressive, du plus direct au plus formel.",
+      "retenir": "La règle d'or est l'escalade progressive. Dialogue direct d'abord. Si ça ne fonctionne pas, le tuteur école intervient en toute confidentialité. La rencontre tuteur école / apprenti est confidentielle : le tuteur entreprise n'a pas accès au compte-rendu."
+    },
+    "q18": {
+      "num": 18,
+      "type": "qcm",
+      "multi": false,
+      "enonce": "Quelle est la durée de la période d'essai en apprentissage ?",
+      "options": [
+        { "id": "A", "text": "30 jours calendaires" },
+        { "id": "B", "text": "45 jours travaillés en entreprise" },
+        { "id": "C", "text": "2 mois" },
+        { "id": "D", "text": "3 mois" }
+      ],
+      "correct": ["B"],
+      "indice": "Ce sont des jours travaillés en entreprise, pas des jours calendaires.",
+      "retenir": "La période d'essai est de 45 jours de présence effective en entreprise. Les semaines école, les arrêts maladie et les congés ne comptent pas. Durant cette période, chacun peut mettre fin au contrat sans se justifier."
+    },
+    "q19": {
+      "num": 19,
+      "type": "vraifaux",
+      "enonce": "En cas de rupture de contrat, le pôle alternance et le CFA cessent de t'accompagner dans ta recherche d'entreprise.",
+      "correct": false,
+      "indice": "L'annuaire de l'agence 📞 le confirme : le pôle alternance reste à vos côtés.",
+      "retenir": "En cas de rupture, le pôle alternance et le CFA continuent à accompagner l'apprenti, suivent ses avancées et transmettent des opportunités. Mais il faut se relancer immédiatement : en pleine année, trouver un nouvel employeur est très difficile. En PGE3/B3 : sans entreprise, pas de note, donc risque de prolongation de scolarité obligatoire."
+    }
+  },
+
+  "feuillets": {
+    "edusign": {
+      "titre": "Procédure officielle Edusign",
+      "pages": [
+        { "titre": "Télécharger l'app", "texte": "Rechercher « Edusign Apprenant » sur l'App Store ou Google Play. Se connecter avec ses identifiants ou via le CAS (SSO) de l'école." },
+        { "titre": "Émarger à chaque cours", "texte": "Ouvrir l'app → cliquer sur le cours → « Sign and Scan » → apposer sa signature officielle → scanner le QR code de l'enseignant. À faire dans les 15 premières minutes ou au moment choisi par l'intervenant." },
+        { "titre": "Justifier une absence", "texte": "Cliquer sur « Justifier une absence » → sélectionner motif, dates et heures → ajouter une photo lisible du justificatif → envoyer. Délai : 48h maximum." },
+        { "titre": "En cas de maladie", "texte": "Il faut un ARRÊT DE TRAVAIL, pas un certificat médical. Préciser au médecin que vous êtes salarié·e. L'arrêt doit être transmis sous 48h à l'école et à l'entreprise. Sans arrêt de travail → absence injustifiée → retenue sur salaire possible." }
+      ]
+    },
+    "rencontreTuteur": {
+      "titre": "Mode d'emploi : la rencontre tuteur école",
+      "pages": [
+        { "titre": "Qu'est-ce que c'est ?", "texte": "Un rendez-vous confidentiel entre l'apprenti et son tuteur école. Le tuteur entreprise n'y a pas accès et n'aura pas accès au compte-rendu. C'est un espace de parole protégé." },
+        { "titre": "Comment ça se passe ?", "texte": "Le tuteur école envoie un mail pour prendre RDV → confirmation de date → échange libre → le tuteur remplit et signe le CR sur 1J1A avant le 30/11 → l'apprenti lit et signe le CR avant le 30/11." },
+        { "titre": "Tu veux plus de confidentialité ?", "texte": "Il est possible de demander à fixer le RDV pendant une semaine école pour éviter d'être vu par le tuteur entreprise." },
+        { "titre": "Pourquoi c'est important ?", "texte": "C'est l'occasion de signaler des difficultés sans pression, d'ajuster avant que les problèmes ne s'accumulent, et de vérifier que les missions correspondent à ce qui était prévu." }
+      ]
+    },
+    "visites": {
+      "titre": "Visites entreprise et évaluations",
+      "pages": [
+        { "titre": "Les 2 visites entreprise", "texte": "Le tuteur école organise 2 rendez-vous à 3 (apprenti + tuteur école + tuteur entreprise). Compte-rendu signé par les 3 parties sur 1J1A. Délais : avant le 28/02 et avant le 30/08." },
+        { "titre": "Les 2 évaluations entreprise", "texte": "Le tuteur entreprise remplit une évaluation sur 1J1A. L'apprenti la lit et la signe. Le tuteur école la consulte également. Délais identiques : 28/02 et 30/08. Si le tuteur tarde → relancer activement." },
+        { "titre": "Pourquoi c'est crucial ?", "texte": "En dernière année (PGE3 ou B3), la note entreprise est OBLIGATOIRE pour valider le diplôme. Sans elle → risque de prolongation de scolarité avec stage de 6 mois. Ne pas laisser traîner les signatures !" }
+      ]
+    }
+  },
+
+  "dossiers": [
+    {
+      "id": "d1",
+      "numero": 1,
+      "titre": "Infiltration à l'académie",
+      "theme": "Mon arrivée à l'école",
+      "decor": "campus",
+      "objectif": "Explorer le campus, interagir avec chaque zone et répondre correctement pour débloquer votre accréditation.",
+      "postits": {
+        "titre": "Notes laissées par les agents précédents",
+        "consigne": "Avant de commencer, retournez les 6 post-it laissés par vos prédécesseurs.",
+        "items": [
+          { "id": "p1", "couleur": "jaune", "titre": "Tes droits fondamentaux", "texte": "Tu as le droit de te former gratuitement, d'être rémunéré et de bénéficier d'un double suivi (tuteur école + tuteur entreprise)." },
+          { "id": "p2", "couleur": "rose", "titre": "Tes congés", "texte": "2,5 jours de congés payés par mois travaillé + 5 jours de congés révision pour toute la durée du contrat." },
+          { "id": "p3", "couleur": "vert", "titre": "Ta couverture sociale", "texte": "Tu dois changer ton statut toi-même sur Ameli pour être correctement couvert. Ne l'oublie pas !" },
+          { "id": "p4", "couleur": "bleu", "titre": "Emprunter un PC portable", "texte": "Le CFA peut te prêter un PC portable. Demande à j.louchart@cfa-eve.fr" },
+          { "id": "p5", "couleur": "orange", "titre": "La carte étudiant des métiers", "texte": "Tu peux obtenir une carte étudiant des métiers. Renseigne-toi auprès du pôle apprentissage." },
+          { "id": "p6", "couleur": "jaune", "titre": "Avantages sociaux", "texte": "Tu peux bénéficier des avantages de l'entreprise (restauration, transport, culture...). Renseigne-toi auprès de ton employeur." }
+        ]
+      },
+      "zonesTitre": "Plan du campus — 4 zones à sécuriser",
+      "zonesConsigne": "Explorez les 4 zones dans l'ordre de votre choix. Chaque zone sécurisée allume un voyant vert.",
+      "zones": [
+        { "id": "za", "nom": "Secrétariat / Pôle alternance", "icon": "🏢", "steps": [ { "type": "question", "ref": "q1" } ] },
+        { "id": "zb", "nom": "Salle de cours / Edusign", "icon": "✍️", "steps": [ { "type": "question", "ref": "q2" }, { "type": "feuillet", "ref": "edusign" }, { "type": "question", "ref": "q3" } ] },
+        { "id": "zc", "nom": "Bureau des coordinatrices / Absences", "icon": "🗂️", "steps": [ { "type": "question", "ref": "q4" }, { "type": "question", "ref": "q5" } ] },
+        { "id": "zd", "nom": "Règles de comportement", "icon": "📏", "steps": [ { "type": "question", "ref": "q6" }, { "type": "question", "ref": "q7" } ] }
+      ],
+      "alerte": {
+        "titre": "Message prioritaire reçu du QG — À ne pas rater",
+        "texte": "Si tu arrives à la rentrée sans contrat signé et que tu as décidé de poursuivre tes recherches, tu dois OBLIGATOIREMENT activer le statut SFP (stagiaire de la formation professionnelle) en remplissant le formulaire P2S auprès de Typhaine MILLOT ou Adeline PUJOL au CFA. Sans ce statut, tu n'es pas couvert en cas d'accident. Délai max de recherche de l'alternance : mi-novembre (PGE) / fin octobre (Bachelor). Au-delà, les seules options sont la césure ou l'arrêt de formation.",
+        "echeanceParProgramme": { "bachelor": "fin octobre", "pge": "mi-novembre" }
+      },
+      "debrief": {
+        "titre": "Rapport de débriefing — Dossier 1",
+        "consigne": "L'agent certifie avoir compris — cochez les 5 engagements.",
+        "items": [
+          "J'émargerai sur Edusign dans les 15 premières minutes de chaque cours ou quand l'intervenant le demande.",
+          "En cas de maladie, je demanderai un arrêt de travail (pas un certificat médical) et le transmettrai sous 48h à l'école et à mon employeur.",
+          "Mon premier interlocuteur pour toute question apprentissage est le pôle alternance.",
+          "Je suis considéré·e comme salarié·e même pendant mes semaines de cours.",
+          "Si je n'ai pas encore de contrat, j'active le statut SFP auprès du CFA."
+        ]
+      },
+      "transition": {
+        "de": "QG · Agence de l'Alternance",
+        "texte": "Agent, bien joué sur la mission académie. Rappel important avant de partir sur le terrain : pensez à mettre à jour votre statut sur Ameli pour être correctement couvert. C'est à vous de faire la démarche — personne ne le fera à votre place. Bonne mission."
+      }
+    },
+    {
+      "id": "d2",
+      "numero": 2,
+      "titre": "Opération terrain",
+      "theme": "Mes débuts en entreprise",
+      "decor": "openspace",
+      "objectif": "Vous êtes déployé·e dans l'entreprise fictive Nexus Corp. Interagissez avec les personnages et prenez les bonnes décisions.",
+      "zonesTitre": "Open space de Nexus Corp — 4 personnages à rencontrer",
+      "zonesConsigne": "Allez à la rencontre des 4 personnages, dans l'ordre de votre choix.",
+      "zones": [
+        { "id": "tuteur", "nom": "Le Tuteur", "icon": "🧑‍💼", "steps": [ { "type": "question", "ref": "q8" } ] },
+        { "id": "rh", "nom": "Le Collègue RH", "icon": "🧑‍💻", "steps": [ { "type": "question", "ref": "q9" } ] },
+        { "id": "equipe", "nom": "L'Équipe", "icon": "👥", "steps": [ { "type": "question", "ref": "q10" }, { "type": "question", "ref": "q11" }, { "type": "question", "ref": "q12" }, { "type": "feuillet", "ref": "rencontreTuteur" } ] },
+        { "id": "manager", "nom": "Le Manager", "icon": "🕴️", "steps": [ { "type": "question", "ref": "q13" }, { "type": "feuillet", "ref": "visites" }, { "type": "question", "ref": "q14" } ] }
+      ],
+      "alerte": {
+        "titre": "Message prioritaire reçu du QG — À ne pas rater",
+        "texte": "Tout manquement aux règles (comportement, assiduité, fraude) est transmis au CFA par l'école (Article 25 RI CFA). 4 niveaux de sanction : avertissement → blâme → exclusion temporaire jusqu'à 5 jours → exclusion définitive. En cas de fraude ou plagiat : note de 0/20 automatique + possibilité de conseil de discipline."
+      },
+      "debrief": {
+        "titre": "Rapport de débriefing — Dossier 2",
+        "consigne": "L'agent certifie avoir compris — cochez les 5 engagements.",
+        "items": [
+          "Je remplirai mon contrat d'objectif sur 1J1A et le signerai avant la mi-novembre.",
+          "Je confirmerai ma rencontre avec mon tuteur école et signerai le CR avant le 30/11.",
+          "Je relancerai mon tuteur entreprise si l'évaluation n'est pas complétée avant les délais (28/02 et 30/08).",
+          "J'adopterai une posture professionnelle en entreprise (ponctualité, tenue, communication, caméra en visio).",
+          "Je complèterai les fiches CLOE et enquêtes transmises par le CFA."
+        ]
+      },
+      "transition": {
+        "de": "QG · Agence de l'Alternance",
+        "texte": "Bonne intégration, agent. Info terrain : vous pouvez obtenir une carte étudiant des métiers — renseignez-vous auprès du pôle alternance. Et si vous êtes en situation de handicap, notre référente Elodie DARRAC (e.darrac@cfa-eve.fr) peut vous accompagner. Préparez-vous : la dernière mission est la plus difficile."
+      }
+    },
+    {
+      "id": "d3",
+      "numero": 3,
+      "titre": "Le cas critique",
+      "theme": "Situation complexe — comment réagir ?",
+      "decor": "crise",
+      "objectif": "Le QG reçoit 3 signaux de détresse simultanés. Désamorcez chaque alerte avec les bons protocoles. Chaque alerte résolue libère un fragment du code d'accès à la finale.",
+      "zonesTitre": "Tableau de crise — 3 alertes à désamorcer",
+      "zonesConsigne": "Résolvez les 3 alertes dans l'ordre de votre choix. Chaque alerte libère un fragment du code d'accès.",
+      "zones": [
+        { "id": "rouge", "nom": "Alerte Rouge — Modification du rythme alternance", "icon": "🔴", "fragment": 0, "steps": [ { "type": "question", "ref": "q15" } ] },
+        { "id": "orange", "nom": "Alerte Orange — Rémunération manquante", "icon": "🟠", "fragment": 1, "steps": [ { "type": "question", "ref": "q16" } ] },
+        { "id": "jaune", "nom": "Alerte Jaune — Conflit avec le tuteur", "icon": "🟡", "fragment": 2, "steps": [ { "type": "question", "ref": "q17" }, { "type": "question", "ref": "q18" }, { "type": "question", "ref": "q19" } ] }
+      ],
+      "alerte": {
+        "titre": "Message prioritaire reçu du QG — À ne pas rater",
+        "texte": "Aucune atteinte à l'intégrité physique ou psychique n'est tolérée (Article 27 RI CFA) : menace, violence, harcèlement, outrage, discrimination. Si tu es témoin ou victime d'une telle situation, tu dois alerter SANS ATTENDRE Typhaine MILLOT / Adeline PUJOL au CFA ET le pôle alternance. Tu n'es jamais seul·e face à ces situations."
+      },
+      "messagesQG": [
+        {
+          "de": "QG · Direction des ressources humaines",
+          "texte": "Agent, rappel important : si vous êtes en situation de handicap, notre référente Elodie DARRAC est à votre disposition pour un accompagnement individualisé. Contact : e.darrac@cfa-eve.fr / 01 60 79 54 00. Notre infirmière, Mme GALLINEAU, ainsi que le pôle accompagnement sont également à votre disposition sur le campus pour vous accompagner au mieux tout au long de l'année, quelles que soient vos problématiques. N'attendez pas pour en parler."
+        },
+        {
+          "de": "QG · Administration centrale",
+          "texte": "Dernière vérification avant la conférence de presse : si vous êtes encore sans contrat, activez MAINTENANT le statut SFP auprès de Typhaine MILLOT / Adeline PUJOL. Sans ce statut, vous n'êtes pas couvert. Délai impératif : mi-novembre (PGE) / fin octobre (Bachelor)."
+        }
+      ],
+      "debrief": {
+        "titre": "Rapport de débriefing final",
+        "consigne": "L'agent certifie avoir compris — cochez les 5 engagements.",
+        "items": [
+          "En cas de problème, j'utilise l'escalade progressive : dialogue direct → tuteur école → pôle alternance.",
+          "Si ma rémunération est manquante, je vérifie d'abord mon bulletin puis je contacte les RH, le CFA, puis le pôle alternance.",
+          "Toute modification de mon rythme alternance nécessite une demande écrite préalable au service apprentissage.",
+          "En cas de harcèlement ou discrimination, j'alerte immédiatement Typhaine MILLOT / Adeline PUJOL et le pôle alternance.",
+          "Je me relance immédiatement si mon contrat est rompu — le pôle alternance continue à m'accompagner."
+        ]
+      }
+    }
+  ],
+
+  "final": {
+    "titre": "Mission accomplie",
+    "accreditation": "Mission accomplie — Accréditation délivrée",
+    "messageCode": "Code d'accès à la finale reconstitué. L'animateur peut vous le demander à voix haute.",
+    "transition": "Rendez-vous en salle de conférence de presse. Gardez votre code d'accès.",
+    "rappel": "Le calendrier et l'annuaire restent consultables toute l'année à cette adresse."
+  },
+
+  "mentions": {
+    "footer": "IMT Business School — Career Center · Serious game pédagogique · 2026",
+    "donnees": "Les prénoms saisis restent sur cet appareil (stockage local). Aucune donnée n'est transmise à un serveur."
+  }
+}

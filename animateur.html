@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>Antisèche animateur — L'Entreprise Mystère</title>
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <style>
+    :root { --violet:#AD1D89; --bleu:#00B8DE; }
+    body { font-family: -apple-system, "Segoe UI", Roboto, Arial, sans-serif; margin: 0; background:#F5F5F8; color:#1A1A2E; line-height:1.55; }
+    .wrap { max-width: 880px; margin: 0 auto; padding: 28px 20px 80px; }
+    h1 { color: var(--violet); }
+    h2 { color: var(--violet); border-bottom: 3px solid var(--bleu); padding-bottom: 6px; margin-top: 44px; }
+    h3 { color: #333; margin-top: 28px; }
+    .code { font-size: 2rem; font-family: "Courier New", monospace; letter-spacing:.3em; background:#1A1A2E; color:#4DD4F0; padding: 12px 22px; border-radius: 10px; display:inline-block; }
+    .q { background:#fff; border:1px solid #DDD; border-left: 5px solid var(--bleu); border-radius: 8px; padding: 14px 18px; margin: 14px 0; }
+    .q .num { font-weight: 800; color: var(--violet); }
+    .rep { color: #157A4C; font-weight: 700; margin-top: 6px; }
+    .ret { color: #555; font-size: .92rem; margin-top: 6px; font-style: italic; }
+    .bloc { background:#FFF8E7; border:1px solid #E4D5A8; border-radius: 8px; padding: 12px 18px; margin: 12px 0; }
+    .alerte { background:#FDEBEB; border-color:#E8B4B4; }
+    ul { margin: 6px 0; }
+    .tag { display:inline-block; font-size:.72rem; background:var(--bleu); color:#fff; border-radius: 6px; padding: 1px 8px; vertical-align: middle; margin-left: 6px; }
+    @media print { body { background:#fff; } .q, .bloc { break-inside: avoid; } }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>🕵️ Antisèche animateur — L'Entreprise Mystère</h1>
+    <p>Page réservée à l'équipe Career Center / CFA (non liée dans le jeu). Contenu généré automatiquement depuis <code>content/content.json</code>. Imprimable (Ctrl/Cmd+P).</p>
+    <div id="root">Chargement du contenu…</div>
+  </div>
+  <script type="module">
+    const root = document.getElementById('root');
+    const esc = (s) => String(s ?? '');
+    try {
+      const c = await (await fetch('content/content.json')).json();
+      const parts = [];
+
+      parts.push(`<h2>🔑 Code final de l'année ${esc(c.meta.annee)}</h2>
+        <p><span class="code">${esc(c.meta.codeFinal)}</span></p>
+        <p>Fragments : ${c.meta.fragments.map((f) => `<b>${esc(f)}</b>`).join(' · ')} (révélés par les alertes Rouge, Orange, Jaune du Dossier 3).</p>`);
+
+      for (const d of c.dossiers) {
+        parts.push(`<h2>📁 Dossier ${d.numero} — ${esc(d.titre)} <span class="tag">${esc(d.theme)}</span></h2>`);
+        if (d.postits) {
+          parts.push(`<h3>🗒️ Mur de post-it</h3><div class="bloc"><ul>${d.postits.items.map((p) => `<li><b>${esc(p.titre)}</b> — ${esc(p.texte)}</li>`).join('')}</ul></div>`);
+        }
+        for (const z of d.zones) {
+          parts.push(`<h3>${esc(z.icon)} ${esc(z.nom)}</h3>`);
+          for (const s of z.steps) {
+            if (s.type === 'question') {
+              const q = c.questions[s.ref];
+              let rep = '';
+              if (q.type === 'qcm') {
+                rep = q.correct.map((id) => `${id} — ${esc(q.options.find((o) => o.id === id)?.text)}`).join(' · ');
+                if (q.multi) rep = 'Réponses multiples : ' + rep;
+              } else if (q.type === 'vraifaux') {
+                rep = q.correct ? 'VRAI' : 'FAUX';
+              } else if (q.type === 'ordre') {
+                rep = 'Ordre : ' + q.correct.join(' → ') + '<br>' + q.correct.map((id, i) => `${i + 1}. ${esc(q.items.find((it) => it.id === id)?.text)}`).join('<br>');
+              } else if (q.type === 'matching') {
+                rep = Object.entries(q.correct).map(([a, b]) =>
+                  `${esc(q.left.find((l) => l.id === a)?.text)} → <b>${esc(q.right.find((r) => r.id === b)?.text)}</b>`).join('<br>');
+              }
+              parts.push(`<div class="q"><span class="num">Q${q.num}</span> · ${esc(q.type).toUpperCase()} — ${esc(q.enonce)}
+                ${q.type === 'qcm' ? '<ul>' + q.options.map((o) => `<li>${o.id}. ${esc(o.text)}</li>`).join('') + '</ul>' : ''}
+                ${q.type === 'ordre' ? '<ul>' + q.items.map((o) => `<li>${o.id}. ${esc(o.text)}</li>`).join('') + '</ul>' : ''}
+                <div class="rep">✅ ${rep}</div>
+                <div class="ret">💬 ${esc(q.retenir)}</div>
+                ${q.indice ? `<div class="ret">🔎 Indice (dès la 2e erreur) : ${esc(q.indice)}</div>` : ''}
+              </div>`);
+            } else if (s.type === 'feuillet') {
+              const f = c.feuillets[s.ref];
+              parts.push(`<div class="bloc"><b>📋 Dossier à feuilleter — ${esc(f.titre)}</b><ul>${f.pages.map((p) => `<li><b>${esc(p.titre)}</b> : ${esc(p.texte)}</li>`).join('')}</ul></div>`);
+            }
+          }
+        }
+        parts.push(`<div class="bloc alerte"><b>⚡ ${esc(d.alerte.titre)}</b><p>${esc(d.alerte.texte)}</p></div>`);
+        if (d.messagesQG) for (const m of d.messagesQG) parts.push(`<div class="bloc"><b>📨 ${esc(m.de)}</b><p>${esc(m.texte)}</p></div>`);
+        parts.push(`<div class="bloc"><b>✅ ${esc(d.debrief.titre)}</b><ul>${d.debrief.items.map((i) => `<li>${esc(i)}</li>`).join('')}</ul></div>`);
+        if (d.transition) parts.push(`<div class="bloc"><b>📨 Transition — ${esc(d.transition.de)}</b><p>${esc(d.transition.texte)}</p></div>`);
+      }
+
+      parts.push(`<h2>📅 Calendrier de l'agent</h2><div class="bloc"><ul>${c.calendrier.punaises.map((p) => `<li><b>${esc(p.periode)}</b> — ${esc(p.action)} <i>${esc(p.consequence)}</i></li>`).join('')}</ul></div>`);
+      parts.push(`<h2>📞 Annuaire de l'agence</h2><div class="bloc"><ul>${c.annuaire.fiches.map((f) => `<li><b>${esc(f.nom)}</b> (${esc(f.role)}) — ${esc(f.quand)}${f.email ? ' · ' + esc(f.email) : ''}${f.tel ? ' · ' + esc(f.tel) : ''}</li>`).join('')}</ul></div>`);
+
+      root.innerHTML = parts.join('');
+    } catch (e) {
+      root.textContent = 'Erreur de chargement du contenu : ' + e.message;
+    }
+  </script>
+</body>
+</html>
