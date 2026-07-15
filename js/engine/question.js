@@ -1,5 +1,5 @@
 /* Moteur commun de question : orchestration mécanique + feedback + indice + « retenir » */
-import { el, clear, showRetenir, stamp, scrollTop } from '../ui.js';
+import { el, clear, showRetenir, scrollTop } from '../ui.js';
 import { answerRecord, save } from '../state.js';
 import { createQCM } from './qcm.js';
 import { createVraiFaux } from './vraifaux.js';
@@ -26,8 +26,9 @@ function createMechanic(q) {
 /**
  * Rend une question dans `container`. Appelle onDone() après validation
  * (bonne réponse + encart « retenir » lu).
+ * `progress` : { index, total, dossierNum } — progression relative au dossier.
  */
-export function renderQuestion(container, qid, q, zoneLabel, onDone) {
+export function renderQuestion(container, qid, q, zoneLabel, onDone, progress) {
   clear(container);
   const rec = answerRecord(qid);
   const mech = createMechanic(q);
@@ -35,9 +36,16 @@ export function renderQuestion(container, qid, q, zoneLabel, onDone) {
   const feedbackBox = el('div', { 'aria-live': 'polite' });
   const validateBtn = el('button', { class: 'btn-primary', text: 'Valider la réponse' });
 
+  const progressLabel = progress
+    ? `Question ${progress.index}/${progress.total} · Dossier ${progress.dossierNum}`
+    : `Question ${q.num}`;
+
   const card = el('div', { class: 'panel q-card' },
     el('div', { class: 'q-meta' },
-      el('span', { text: `Question ${q.num}/19 · ${TYPE_LABEL[q.type]}` }),
+      el('span', {},
+        el('span', { text: `${progressLabel} · ${TYPE_LABEL[q.type]}` }),
+        q.multi ? el('span', { class: 'badge-multi', text: '☑☑ Réponses multiples' }) : null
+      ),
       el('span', { text: zoneLabel || '' })
     ),
     el('p', { class: 'q-enonce', text: q.enonce }),
@@ -63,24 +71,20 @@ export function renderQuestion(container, qid, q, zoneLabel, onDone) {
       save();
       mech.lock();
       validateBtn.disabled = true;
-      clear(feedbackBox).append(
-        el('div', { class: 'feedback ok' },
-          stamp('Validé', 'vert'),
-          el('span', { text: ' Bonne réponse, agent.' })
-        )
-      );
-      await showRetenir(q.retenir);
+      clear(feedbackBox);
+      await showRetenir(q.retenir, { success: true });
       onDone();
     } else {
       save();
-      clear(feedbackBox).append(
+      const nodes = [
         el('div', { class: 'feedback err', text: '✖ Piste incorrecte, agent. Réessayez.' }),
-        rec.attempts >= 2 && q.indice
-          ? el('div', { class: 'feedback hint' },
-              el('span', { text: '🔎 Indice : ' + q.indice })
-            )
-          : null
-      );
+      ];
+      if (rec.attempts >= 2 && q.indice) {
+        nodes.push(el('div', { class: 'feedback hint' },
+          el('span', { text: '🔎 Indice : ' + q.indice })
+        ));
+      }
+      clear(feedbackBox).append(...nodes);
     }
   });
 

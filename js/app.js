@@ -188,15 +188,12 @@ function renderIntro() {
 
   const msgP = el('p', { class: 'telex-msg' });
   const nextBtn = el('button', { class: 'btn-primary hidden', text: 'Message suivant' });
-  const skipBtn = el('button', { class: 'btn-ghost', text: 'Passer l’introduction ≫' });
 
   let idx = 0;
-  let cancelled = false;
 
   async function playMessage() {
     nextBtn.classList.add('hidden');
     await typewriter(msgP, content.intro.messages[idx]);
-    if (cancelled) return;
     nextBtn.textContent = idx < content.intro.messages.length - 1 ? 'Message suivant' : 'Ouvrir le tableau de bord';
     nextBtn.classList.remove('hidden');
   }
@@ -206,7 +203,6 @@ function renderIntro() {
     if (idx >= content.intro.messages.length) { go('hub'); return; }
     playMessage();
   });
-  skipBtn.addEventListener('click', () => { cancelled = true; go('hub'); });
 
   app.append(
     el('div', { class: 'telex' },
@@ -215,9 +211,7 @@ function renderIntro() {
         msgP
       ),
       el('div', { class: 'spacer' }),
-      nextBtn,
-      el('div', { class: 'spacer' }),
-      skipBtn
+      nextBtn
     )
   );
   playMessage();
@@ -469,7 +463,13 @@ function viewZone(d, ds, zoneId) {
   };
 
   if (step.type === 'question') {
-    renderQuestion(holder, step.ref, content.questions[step.ref], z.nom, advance);
+    const dossierQids = d.zones.flatMap((zz) => zz.steps.filter((s) => s.type === 'question').map((s) => s.ref));
+    const progress = {
+      index: dossierQids.filter((qid) => questionDone(qid)).length + 1,
+      total: dossierQids.length,
+      dossierNum: d.numero,
+    };
+    renderQuestion(holder, step.ref, content.questions[step.ref], z.nom, advance, progress);
   } else if (step.type === 'feuillet') {
     renderFeuillet(holder, content.feuillets[step.ref], advance);
   }
@@ -605,6 +605,7 @@ function renderFinal() {
       el('p', { class: 'dim small', text: `${PROGRAMME_LABEL[state.programme] || ''} · ${content.final.accreditation} · ${now.toLocaleDateString('fr-FR')} ${now.toLocaleTimeString('fr-FR', { hour: '2-digit', minute: '2-digit' })}` }),
       el('div', { class: 'stats-grid' },
         el('div', { class: 'stat-tile' }, el('div', { class: 'v', text: `${s.firstTry}/${s.total}` }), el('div', { class: 'l', text: 'du premier coup' })),
+        el('div', { class: 'stat-tile' }, el('div', { class: 'v', text: s.totalMinutes !== null ? s.totalMinutes + ' min' : '—' }), el('div', { class: 'l', text: 'Temps total' })),
         ...s.perDossier.map((pd) =>
           el('div', { class: 'stat-tile' }, el('div', { class: 'v', text: pd.minutes !== null ? pd.minutes + ' min' : '—' }), el('div', { class: 'l', text: `Dossier ${pd.numero}` }))
         )
@@ -693,6 +694,15 @@ function openAnnuaire() {
           ? el('div', { class: 'f-coords' },
               f.email ? el('a', { href: 'mailto:' + f.email, text: '✉ ' + f.email }) : '',
               f.tel ? el('a', { href: 'tel:' + f.tel.replace(/\s/g, ''), text: '☎ ' + f.tel }) : ''
+            )
+          : '',
+        Array.isArray(f.coords)
+          ? el('div', { class: 'f-coords' },
+              ...f.coords.map((c) => el('div', { class: 'f-coord-line' },
+                c.nom ? el('span', { class: 'f-coord-nom', text: c.nom + ' — ' }) : '',
+                c.email ? el('a', { href: 'mailto:' + c.email, text: '✉ ' + c.email }) : '',
+                c.tel ? el('a', { href: 'tel:' + c.tel.replace(/\s/g, ''), text: '☎ ' + c.tel }) : ''
+              ))
             )
           : ''
       )

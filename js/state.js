@@ -96,5 +96,8 @@ export function stats(content) {
     if (ds && ds.start && ds.end) min = Math.max(1, Math.round((ds.end - ds.start) / 60000));
     return { numero: d.numero, minutes: min };
   });
-  return { total: qids.length, firstTry, perDossier };
+  // Temps total = somme des durées des dossiers (hors pauses sur le hub)
+  const measured = perDossier.filter((d) => d.minutes !== null);
+  const totalMinutes = measured.length ? measured.reduce((sum, d) => sum + d.minutes, 0) : null;
+  return { total: qids.length, firstTry, perDossier, totalMinutes };
 }

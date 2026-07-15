@@ -108,6 +108,7 @@ export async function generateAgentCard(content) {
   ctx.fillStyle = '#FFFFFF';
   ctx.font = `28px ${SANS}`;
   ctx.fillText(`Questions réussies du premier coup : ${s.firstTry} / ${s.total}`, W / 2, y); y += 44;
+  ctx.fillText(`Temps total de la mission : ${s.totalMinutes !== null ? s.totalMinutes + ' min' : '—'}`, W / 2, y); y += 44;
   const durees = s.perDossier
     .map((d) => `D${d.numero} : ${d.minutes !== null ? d.minutes + ' min' : '—'}`)
     .join('   ·   ');
@@ -138,15 +139,17 @@ export async function generateAgentCard(content) {
     y = wrapText(ctx, `• ${f.nom} — ${f.role}`, 110, y, W - 220, 32) + 4;
   }
 
-  /* Pied : logo IMT-BS sur cartouche blanc */
+  /* Pied : logo IMT-BS sur cartouche blanc — ancré par son bord bas pour
+     garantir l'espace avec la ligne de mentions (H − 72) quel que soit le
+     ratio de l'image */
   const logo = await loadLogo();
   if (logo) {
     const lw = 300;
     const lh = lw * (logo.height / logo.width);
     const lx = (W - lw) / 2;
-    const ly = H - 150 - lh / 2;
-    ctx.fillStyle = '#FFFFFF';
     const pad = 18;
+    const ly = H - 120 - pad - lh; // bas du cartouche à H − 120
+    ctx.fillStyle = '#FFFFFF';
     ctx.beginPath();
     ctx.roundRect(lx - pad, ly - pad, lw + pad * 2, lh + pad * 2, 14);
     ctx.fill();

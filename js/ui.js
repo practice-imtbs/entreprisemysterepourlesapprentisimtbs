@@ -74,12 +74,19 @@ export function shuffle(arr) {
   return a;
 }
 
-/* Encart "Ce qu'il faut retenir" — modal bloquante douce */
-export function showRetenir(texte) {
+/* Encart "Ce qu'il faut retenir" — modal bloquante douce.
+   options.success : affiche d'abord un bandeau « Bonne réponse » bien visible. */
+export function showRetenir(texte, options = {}) {
   return new Promise((resolve) => {
     const btn = el('button', { class: 'btn-primary', text: 'Compris, continuer' });
-    const overlay = el('div', { class: 'retenir-overlay', role: 'dialog', 'aria-modal': 'true', 'aria-label': 'Ce qu’il faut retenir' },
+    const overlay = el('div', { class: 'retenir-overlay', role: 'dialog', 'aria-modal': 'true', 'aria-label': options.success ? 'Bonne réponse — ce qu’il faut retenir' : 'Ce qu’il faut retenir' },
       el('div', { class: 'retenir-card' },
+        options.success
+          ? el('div', { class: 'r-success' },
+              stamp('✔ Validé', 'vert'),
+              el('span', { text: 'Bonne réponse, agent !' })
+            )
+          : null,
         el('div', { class: 'r-kicker', text: '💬 Ce qu’il faut retenir' }),
         el('p', { text: texte }),
         btn

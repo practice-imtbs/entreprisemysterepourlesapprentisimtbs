@@ -1,80 +1,126 @@
-/* Mécanique "Remettre dans l'ordre" — interaction par taps (fiable mobile + accessible).
-   On tape les éléments dans l'ordre voulu ; un tap sur un élément placé le retire. */
-import { el, shuffle } from '../ui.js';
+/* Mécanique "Remettre dans l'ordre" — glisser-déposer direct (Pointer Events)
+   + boutons ▲/▼ accessibles (clavier / sans drag). La liste démarre mélangée ;
+   la position courante (1, 2, 3…) est affichée en permanence sur chaque item. */
+import { el, shuffle, reducedMotion } from '../ui.js';
 
 export function createOrdre(q) {
-  const sequence = []; // ids dans l'ordre choisi
-  const items = shuffle(q.items);
-  const buttons = new Map();
+  let order = shuffle(q.items).map((it) => it.id); // ids dans l'ordre courant
+  let locked = false;
 
-  const slots = el('div', { class: 'ordre-slots', 'aria-live': 'polite', 'aria-label': 'Votre ordre' });
-  const list = el('div', { class: 'opt-list', role: 'group', 'aria-label': 'Étapes à ordonner' });
+  const list = el('div', { class: 'ordre-list', role: 'list', 'aria-label': 'Étapes à ordonner — glissez ou utilisez les flèches' });
+  const root = el('div', {},
+    el('p', { class: 'match-instructions', text: 'Glissez les étapes pour les remettre dans le bon ordre (ou utilisez les flèches ▲▼).' }),
+    list
+  );
 
-  function renderSlots() {
-    slots.textContent = '';
-    if (!sequence.length) {
-      slots.append(el('span', { class: 'placeholder', text: 'Tapez les étapes dans l’ordre choisi ↓ (re-tapez une étape placée pour la retirer)' }));
-      return;
-    }
-    sequence.forEach((id, i) => {
-      const item = q.items.find((it) => it.id === id);
-      const chip = el('button', { class: 'slot', type: 'button', 'aria-label': `Retirer l'étape ${i + 1} : ${item.text}` },
-        el('span', { class: 'n', text: String(i + 1) }),
-        el('span', { text: shortText(item.text) })
+  function itemById(id) {
+    return q.items.find((it) => it.id === id);
+  }
+
+  function render() {
+    list.textContent = '';
+    order.forEach((id, i) => {
+      const item = itemById(id);
+      const up = el('button', { class: 'move-btn', type: 'button', 'aria-label': `Monter l'étape : ${item.text}`, disabled: i === 0 || locked, text: '▲' });
+      const down = el('button', { class: 'move-btn', type: 'button', 'aria-label': `Descendre l'étape : ${item.text}`, disabled: i === order.length - 1 || locked, text: '▼' });
+      up.addEventListener('click', () => move(id, -1));
+      down.addEventListener('click', () => move(id, +1));
+
+      const row = el('div', { class: 'ordre-item', role: 'listitem', 'data-id': id },
+        el('span', { class: 'drag-handle', 'aria-hidden': 'true', text: '⠿' }),
+        el('span', { class: 'ordre-pos', 'aria-hidden': 'true', text: String(i + 1) }),
+        el('span', { class: 'ordre-text', text: item.text }),
+        el('span', { class: 'move-btns' }, up, down)
       );
-      chip.addEventListener('click', () => {
-        if (slots.dataset.locked) return;
-        sequence.splice(sequence.indexOf(id), 1);
-        sync();
-      });
-      slots.append(chip);
+      attachDrag(row, id);
+      list.append(row);
     });
   }
 
-  function shortText(t) {
-    return t.length > 46 ? t.slice(0, 44).trimEnd() + '…' : t;
-  }
-
-  function sync() {
-    renderSlots();
-    for (const [id, b] of buttons) {
-      const placed = sequence.includes(id);
-      b.classList.toggle('selected', placed);
-      b.setAttribute('aria-pressed', String(placed));
-      const tag = b.querySelector('.pair-tag');
-      if (tag) tag.remove();
-      if (placed) {
-        b.append(el('span', { class: 'pair-tag', text: '#' + (sequence.indexOf(id) + 1) }));
-      }
+  function move(id, delta) {
+    if (locked) return;
+    const i = order.indexOf(id);
+    const j = i + delta;
+    if (j < 0 || j >= order.length) return;
+    [order[i], order[j]] = [order[j], order[i]];
+    render();
+    // Restaure le focus sur le bouton équivalent après re-rendu (navigation clavier)
+    const row = list.querySelector(`[data-id="${id}"]`);
+    if (row) {
+      const btn = row.querySelectorAll('.move-btn')[delta < 0 ? 0 : 1];
+      if (btn && !btn.disabled) btn.focus();
+      else row.querySelector('.move-btn:not([disabled])')?.focus();
     }
   }
 
-  for (const item of items) {
-    const btn = el('button', { class: 'opt', 'aria-pressed': 'false' },
-      el('span', { class: 'opt-key', 'aria-hidden': 'true', text: '↕' }),
-      el('span', { text: item.text })
-    );
-    btn.addEventListener('click', () => {
-      if (slots.dataset.locked) return;
-      if (sequence.includes(item.id)) sequence.splice(sequence.indexOf(item.id), 1);
-      else sequence.push(item.id);
-      sync();
+  function attachDrag(row, id) {
+    const handle = row.querySelector('.drag-handle');
+    handle.addEventListener('pointerdown', (e) => {
+      if (locked) return;
+      e.preventDefault();
+      handle.setPointerCapture(e.pointerId);
+      row.classList.add('dragging');
+      let startY = e.clientY;
+
+      const onMove = (ev) => {
+        row.style.transform = `translateY(${ev.clientY - startY}px)`;
+        // Index cible = nombre d'items (hors item saisi) dont le milieu est au-dessus du pointeur
+        const others = [...list.querySelectorAll('.ordre-item')].filter((r) => r !== row);
+        let target = others.length;
+        for (let k = 0; k < others.length; k++) {
+          const r = others[k].getBoundingClientRect();
+          if (ev.clientY < r.top + r.height / 2) { target = k; break; }
+        }
+        const cur = order.indexOf(id);
+        if (target !== cur) {
+          order.splice(cur, 1);
+          order.splice(target, 0, id);
+          reorderDom(row);
+          // L'item vient d'être déplacé dans le DOM : on repart de la position actuelle du pointeur
+          startY = ev.clientY;
+          row.style.transform = '';
+        }
+      };
+      const onUp = () => {
+        handle.removeEventListener('pointermove', onMove);
+        handle.removeEventListener('pointerup', onUp);
+        handle.removeEventListener('pointercancel', onUp);
+        row.classList.remove('dragging');
+        row.style.transform = '';
+        render();
+      };
+      handle.addEventListener('pointermove', onMove);
+      handle.addEventListener('pointerup', onUp);
+      handle.addEventListener('pointercancel', onUp);
     });
-    buttons.set(item.id, btn);
-    list.append(btn);
   }
-  renderSlots();
+
+  function reorderDom(draggedRow) {
+    const rows = new Map([...list.querySelectorAll('.ordre-item')].map((r) => [r.dataset.id, r]));
+    order.forEach((oid, i) => {
+      const r = rows.get(oid);
+      if (r && list.children[i] !== r) list.insertBefore(r, list.children[i] || null);
+      const pos = r && r.querySelector('.ordre-pos');
+      if (pos) pos.textContent = String(i + 1);
+      if (r && !reducedMotion() && r !== draggedRow) {
+        r.classList.add('shifted');
+        setTimeout(() => r.classList.remove('shifted'), 180);
+      }
+    });
+  }
+
+  render();
 
   return {
-    el: el('div', { class: 'match-left' }, slots, list),
-    isComplete: () => sequence.length === q.items.length,
-    check: () => sequence.length === q.correct.length && sequence.every((id, i) => id === q.correct[i]),
+    el: root,
+    isComplete: () => true, // la liste est complète par construction
+    check: () => order.length === q.correct.length && order.every((id, i) => id === q.correct[i]),
     flash: (ok) => {
       if (!ok) {
-        slots.classList.add('wrong-flash');
-        setTimeout(() => slots.classList.remove('wrong-flash'), 900);
+        list.classList.add('wrong-flash');
+        setTimeout(() => list.classList.remove('wrong-flash'), 900);
       }
     },
-    lock: () => { slots.dataset.locked = '1'; },
+    lock: () => { locked = true; render(); },
   };
 }

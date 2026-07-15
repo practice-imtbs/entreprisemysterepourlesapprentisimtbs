@@ -71,6 +71,7 @@
         "role": "1er interlocuteur",
         "quand": "Pour TOUTE question liée à l'apprentissage, avant les coordinatrices et les enseignants.",
         "priorite": true,
+        "email": "career-center@imt-bs.eu",
         "programmes": ["bachelor", "pge"]
       },
       {
@@ -89,23 +90,32 @@
       },
       {
         "id": "cavard",
-        "nom": "Mme CAVARD",
+        "nom": "Cassandra CAVARD",
         "role": "Coordinatrice Bachelor",
         "quand": "Suivi pédagogique, absences, justificatifs.",
+        "email": "cassandra.cavard@imt-bs.eu",
+        "tel": "01 60 76 47 29",
         "programmes": ["bachelor"]
       },
       {
         "id": "marland",
-        "nom": "Mme MARLAND DELPIERRE",
+        "nom": "Sandrine MARLAND DELPIERRE",
         "role": "Coordinatrice PGE2",
         "quand": "Suivi pédagogique, absences, justificatifs — PGE2.",
+        "email": "sandrine-marland_delpierre@imt-bs.eu",
+        "tel": "01 60 76 42 44",
         "programmes": ["pge"]
       },
       {
         "id": "pge3",
-        "nom": "Mme ANTUNES · Mme VANG · Mme HERIZI",
+        "nom": "Sandy ANTUNES · Sao VANG · Nawel HERIZI",
         "role": "Coordinatrices PGE3 — selon votre majeure",
-        "quand": "Mme ANTUNES (MISI) · Mme VANG (MSET/DDDM/MEIA) · Mme HERIZI (BDIAT). Suivi pédagogique, absences, justificatifs.",
+        "quand": "Sandy ANTUNES (MISI) · Sao VANG (MSET/DDDM/MEIA) · Nawel HERIZI (BDIAT). Suivi pédagogique, absences, justificatifs.",
+        "coords": [
+          { "nom": "Sandy ANTUNES", "email": "sandy.antunes@imt-bs.eu", "tel": "01 60 76 42 24" },
+          { "nom": "Sao VANG", "email": "sao.vang@imt-bs.eu", "tel": "01 60 76 46 22" },
+          { "nom": "Nawel HERIZI", "email": "nawel.herizi@imt-bs.eu", "tel": "01 60 76 47 53" }
+        ],
         "programmes": ["pge"]
       },
       {
@@ -119,7 +129,7 @@
       },
       {
         "id": "accompagnement",
-        "nom": "Pôle Accompagnement étudiant IMT-BS",
+        "nom": "Pôle de coordination pédagogique et d'accompagnement étudiant",
         "role": "Soutien étudiant",
         "quand": "Difficultés de tous ordres : financières, personnelles, santé.",
         "programmes": ["bachelor", "pge"]
@@ -127,8 +137,10 @@
       {
         "id": "medical",
         "nom": "Pôle médical IMT-BS",
-        "role": "Infirmière — Mme GALLINEAU",
+        "role": "Infirmière — Audrey GALLINEAU",
         "quand": "Questions de santé sur le campus.",
+        "email": "audrey.gallineau@imtbs-tsp.eu",
+        "tel": "01 60 76 43 73",
         "programmes": ["bachelor", "pge"]
       },
       {
@@ -403,6 +415,21 @@
       "correct": false,
       "indice": "L'annuaire de l'agence 📞 le confirme : le pôle alternance reste à vos côtés.",
       "retenir": "En cas de rupture, le pôle alternance et le CFA continuent à accompagner l'apprenti, suivent ses avancées et transmettent des opportunités. Mais il faut se relancer immédiatement : en pleine année, trouver un nouvel employeur est très difficile. En PGE3/B3 : sans entreprise, pas de note, donc risque de prolongation de scolarité obligatoire."
+    },
+    "q20": {
+      "num": 20,
+      "type": "qcm",
+      "multi": false,
+      "enonce": "Tu viens de signer ton contrat d'apprentissage. Que dois-tu faire concernant ta couverture sociale (Ameli) ?",
+      "options": [
+        { "id": "A", "text": "Rien : l'école met mon dossier à jour automatiquement" },
+        { "id": "B", "text": "Mettre à jour moi-même mon statut sur ameli.fr pour être couvert·e en tant que salarié·e" },
+        { "id": "C", "text": "Attendre un courrier de la Sécurité sociale" },
+        { "id": "D", "text": "Demander à mon employeur de faire la démarche" }
+      ],
+      "correct": ["B"],
+      "indice": "Relisez le post-it vert du Dossier 1 : qui doit faire la démarche ?",
+      "retenir": "Le changement de statut sur Ameli est une démarche personnelle : personne ne la fera à ta place. Sans mise à jour, tu risques d'être mal couvert·e et mal remboursé·e en tant que salarié·e. À faire dès la signature du contrat."
     }
   },
 
@@ -495,7 +522,7 @@
       "zonesConsigne": "Allez à la rencontre des 4 personnages, dans l'ordre de votre choix.",
       "zones": [
         { "id": "tuteur", "nom": "Le Tuteur", "icon": "🧑‍💼", "steps": [ { "type": "question", "ref": "q8" } ] },
-        { "id": "rh", "nom": "Le Collègue RH", "icon": "🧑‍💻", "steps": [ { "type": "question", "ref": "q9" } ] },
+        { "id": "rh", "nom": "Le Collègue RH", "icon": "🧑‍💻", "steps": [ { "type": "question", "ref": "q9" }, { "type": "question", "ref": "q20" } ] },
         { "id": "equipe", "nom": "L'Équipe", "icon": "👥", "steps": [ { "type": "question", "ref": "q10" }, { "type": "question", "ref": "q11" }, { "type": "question", "ref": "q12" }, { "type": "feuillet", "ref": "rencontreTuteur" } ] },
         { "id": "manager", "nom": "Le Manager", "icon": "🕴️", "steps": [ { "type": "question", "ref": "q13" }, { "type": "feuillet", "ref": "visites" }, { "type": "question", "ref": "q14" } ] }
       ],
@@ -540,7 +567,7 @@
       "messagesQG": [
         {
           "de": "QG · Direction des ressources humaines",
-          "texte": "Agent, rappel important : si vous êtes en situation de handicap, notre référente Elodie DARRAC est à votre disposition pour un accompagnement individualisé. Contact : e.darrac@cfa-eve.fr / 01 60 79 54 00. Notre infirmière, Mme GALLINEAU, ainsi que le pôle accompagnement sont également à votre disposition sur le campus pour vous accompagner au mieux tout au long de l'année, quelles que soient vos problématiques. N'attendez pas pour en parler."
+          "texte": "Agent, rappel important : si vous êtes en situation de handicap, notre référente Elodie DARRAC est à votre disposition pour un accompagnement individualisé. Contact : e.darrac@cfa-eve.fr / 01 60 79 54 00. Notre infirmière, Audrey GALLINEAU, ainsi que le pôle de coordination pédagogique et d'accompagnement étudiant sont également à votre disposition sur le campus pour vous accompagner au mieux tout au long de l'année, quelles que soient vos problématiques. N'attendez pas pour en parler."
         },
         {
           "de": "QG · Administration centrale",

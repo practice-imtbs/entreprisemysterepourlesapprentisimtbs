@@ -15,11 +15,17 @@ export function createMatching(q) {
   const leftCol = el('div', { class: 'opt-list match-left', role: 'group', 'aria-label': 'Éléments à relier' });
   const rightCol = el('div', { class: 'opt-list match-right', role: 'group', 'aria-label': 'Cibles' });
   const root = el('div', {},
-    el('p', { class: 'match-instructions', text: '1. Tapez un élément — 2. Tapez sa cible. Re-tapez un élément relié pour annuler son lien.' }),
-    el('div', { class: 'match-col-label', text: 'Situations' }),
-    leftCol,
-    el('div', { class: 'match-col-label', text: 'Cibles' }),
-    rightCol
+    el('p', { class: 'match-instructions', text: '1. Tapez un élément (à gauche) — 2. Tapez sa cible (à droite). Re-tapez un élément relié pour annuler son lien.' }),
+    el('div', { class: 'match-duo' },
+      el('div', { class: 'match-duo-col' },
+        el('div', { class: 'match-col-label', text: 'Situations' }),
+        leftCol
+      ),
+      el('div', { class: 'match-duo-col' },
+        el('div', { class: 'match-col-label', text: 'Cibles' }),
+        rightCol
+      )
+    )
   );
 
   function labelFor(rightId) {
