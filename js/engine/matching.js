@@ -9,7 +9,9 @@ export function createMatching(q) {
   const leftBtns = new Map();
   const rightBtns = new Map();
 
-  const leftItems = shuffle(q.left);
+  // Colonne de gauche dans l'ordre A, B, C, D… ; seules les cibles sont
+  // mélangées (sans quoi les bonnes paires seraient alignées face à face).
+  const leftItems = q.left;
   const rightItems = q.right.length > 2 ? shuffle(q.right) : q.right;
 
   const leftCol = el('div', { class: 'opt-list match-left', role: 'group', 'aria-label': 'Éléments à relier' });
