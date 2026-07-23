@@ -436,7 +436,7 @@
       "titre": "Mode d'emploi : la rencontre tuteur école",
       "pages": [
         { "titre": "Qu'est-ce que c'est ?", "texte": "Un rendez-vous confidentiel entre l'apprenti et son tuteur école. Le tuteur entreprise n'y a pas accès et n'aura pas accès au compte-rendu. C'est un espace de parole protégé." },
-        { "titre": "Comment ça se passe ?", "texte": "Le tuteur école envoie un mail pour prendre RDV → confirmation de date → échange libre → le tuteur remplit et signe le CR sur 1J1A avant le 30/11 → l'apprenti lit et signe le CR avant le 30/11." },
+        { "titre": "Comment ça se passe ?", "texte": "En M1 (PGE2) : vous serez contacté·e par le pôle alternance pour fixer ce RDV. En M2 (PGE3) : vous devez contacter vous-même votre tuteur école pour le fixer. Ensuite, dans les deux cas : confirmation de date → échange libre → le tuteur remplit et signe le CR sur 1J1A avant le 30/11 → l'apprenti lit et signe le CR avant le 30/11." },
         { "titre": "Vous voulez plus de confidentialité ?", "texte": "Il est possible de demander à fixer le RDV pendant une semaine école pour éviter d'être vu par le tuteur entreprise." },
         { "titre": "Pourquoi c'est important ?", "texte": "C'est l'occasion de signaler des difficultés sans pression, d'ajuster avant que les problèmes ne s'accumulent, et de vérifier que les missions correspondent à ce qui était prévu." }
       ]
