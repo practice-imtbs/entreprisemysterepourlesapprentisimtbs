@@ -467,7 +467,7 @@
           { "id": "p2", "couleur": "rose", "titre": "Vos congés", "texte": "2,5 jours de congés payés par mois travaillé + 5 jours de congés révision pour toute la durée du contrat." },
           { "id": "p3", "couleur": "vert", "titre": "Votre couverture sociale", "texte": "Vous devez changer votre statut vous-même sur Ameli pour être correctement couvert·e. Ne l'oubliez pas !" },
           { "id": "p4", "couleur": "bleu", "titre": "Emprunter un PC portable", "texte": "Le CFA peut vous prêter un PC portable. Demandez à j.louchart@cfa-eve.fr" },
-          { "id": "p5", "couleur": "orange", "titre": "La carte étudiant des métiers", "texte": "Vous pouvez obtenir une carte étudiant des métiers. Renseignez-vous auprès du pôle apprentissage." },
+          { "id": "p5", "couleur": "orange", "titre": "La carte étudiant des métiers", "texte": "Vous pouvez obtenir une carte étudiant des métiers. Renseignez-vous auprès du pôle alternance." },
           { "id": "p6", "couleur": "jaune", "titre": "Avantages sociaux", "texte": "Vous pouvez bénéficier des avantages de l'entreprise (restauration, transport, culture...). Renseignez-vous auprès de votre employeur." }
         ]
       },
