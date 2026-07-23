@@ -506,13 +506,14 @@ function viewAlerte(d, ds) {
 function viewQG(d, ds) {
   clear(app);
   const msg = d.messagesQG[ds.qgIdx];
+  const texte = (msg.texteParProgramme && state.programme && msg.texteParProgramme[state.programme]) || msg.texte;
   const btn = el('button', { class: 'btn-primary', text: 'Message lu — continuer' });
   btn.addEventListener('click', () => { ds.qgIdx += 1; save(); render(); });
   app.append(
     dossierHead(d, 'Messagerie sécurisée'),
     el('div', { class: 'qg-message' },
       el('div', { class: 'qg-head', text: '📨 Message reçu de : ' + msg.de }),
-      el('div', { class: 'qg-body', text: msg.texte })
+      el('div', { class: 'qg-body', text: texte })
     ),
     el('div', { class: 'spacer' }),
     btn

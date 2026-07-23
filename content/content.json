@@ -564,7 +564,11 @@
         },
         {
           "de": "QG · Administration centrale",
-          "texte": "Dernière vérification avant la conférence de presse : si vous êtes encore sans contrat, activez MAINTENANT le statut SFP auprès de Typhaine MILLOT / Adeline PUJOL. Sans ce statut, vous n'êtes pas couvert. Délai impératif : mi-novembre (PGE) / fin octobre (Bachelor)."
+          "texte": "Dernière vérification avant la conférence de presse : si vous êtes encore sans contrat, activez MAINTENANT le statut SFP auprès du CFA. Sans ce statut, vous n'êtes pas couvert.",
+          "texteParProgramme": {
+            "bachelor": "Dernière vérification avant la conférence de presse : si vous êtes encore sans contrat, activez MAINTENANT le statut SFP auprès de Typhaine MILLOT. Sans ce statut, vous n'êtes pas couvert. Délai impératif : fin octobre.",
+            "pge": "Dernière vérification avant la conférence de presse : si vous êtes encore sans contrat, activez MAINTENANT le statut SFP auprès d'Adeline PUJOL. Sans ce statut, vous n'êtes pas couvert. Délai impératif : mi-novembre."
+          }
         }
       ],
       "debrief": {
