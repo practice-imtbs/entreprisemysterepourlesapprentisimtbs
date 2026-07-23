@@ -328,16 +328,16 @@
       "num": 14,
       "type": "qcm",
       "multi": false,
-      "enonce": "Votre manager vous demande de rester jusqu'à 20h alors que vous avez cours à 8h le lendemain (semaine école). Comment réagissez-vous ?",
+      "enonce": "Votre manager vous demande de rester tard pour aider l'équipe sur un gros dossier. Comment réagissez-vous ?",
       "options": [
-        { "id": "A", "text": "Vous restez sans rien dire pour faire bonne impression" },
-        { "id": "B", "text": "Vous expliquez poliment que vous avez cours le lendemain et que vous devez partir à une heure raisonnable" },
-        { "id": "C", "text": "Vous partez sans explication" },
-        { "id": "D", "text": "Vous demandez à votre tuteur d'appeler l'école pour justifier votre absence demain" }
+        { "id": "A", "text": "Vous refusez de rester, même exceptionnellement" },
+        { "id": "B", "text": "Vous restez avec l'équipe pour aider sur ce dossier" },
+        { "id": "C", "text": "Vous partez sans rien dire, en laissant l'équipe se débrouiller" },
+        { "id": "D", "text": "Vous restez systématiquement tard dès que l'équipe le demande, sans jamais poser de limite" }
       ],
       "correct": ["B"],
-      "indice": "Les semaines école sont contractuelles — l'employeur connaît votre statut.",
-      "retenir": "L'apprenti est salarié ET étudiant. Les semaines école sont contractuelles. La communication respectueuse est toujours la meilleure approche. L'employeur connaît le statut et doit respecter le rythme alternance."
+      "indice": "Un coup de main ponctuel n'est pas la même chose qu'un rythme systématique.",
+      "retenir": "Rester exceptionnellement pour aider l'équipe sur un dossier ponctuel est une preuve de professionnalisme et d'esprit d'équipe. Attention cependant : cela doit rester exceptionnel. Si rester tard devient habituel, il faut en parler (charge de travail, organisation de l'équipe) plutôt que de laisser la situation s'installer."
     },
     "q15": {
       "num": 15,
@@ -444,7 +444,7 @@
     "visites": {
       "titre": "Visites entreprise et évaluations",
       "pages": [
-        { "titre": "Les 2 visites entreprise", "texte": "Le tuteur école organise 2 rendez-vous à 3 (apprenti + tuteur école + tuteur entreprise). Compte-rendu signé par les 3 parties sur 1J1A. Délais : avant le 28/02 et avant le 30/08." },
+        { "titre": "Les 2 visites entreprise", "texte": "En M1 (PGE2) : le tuteur école organise ces 2 rendez-vous à 3 (apprenti + tuteur école + tuteur entreprise). En M2 (PGE3) : c'est à vous de les organiser. Compte-rendu signé par les 3 parties sur 1 Jeune 1 Alternance. Délais : avant le 28/02 et avant le 30/08." },
         { "titre": "Les 2 évaluations entreprise", "texte": "Le tuteur entreprise remplit une évaluation sur 1J1A. L'apprenti la lit et la signe. Le tuteur école la consulte également. Délais identiques : 28/02 et 30/08. Si le tuteur tarde → relancer activement." },
         { "titre": "Pourquoi c'est crucial ?", "texte": "En dernière année (PGE3 ou B3), la note entreprise est OBLIGATOIRE pour valider le diplôme. Sans elle → risque de prolongation de scolarité avec stage de 6 mois. Ne pas laisser traîner les signatures !" }
       ]

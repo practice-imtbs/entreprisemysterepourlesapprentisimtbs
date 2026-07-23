@@ -1,5 +1,5 @@
 /* Service worker — PWA légère : cache-first pour un jeu 100 % hors ligne après 1er chargement */
-const VERSION = 'em-v10';
+const VERSION = 'em-v11';
 const ASSETS = [
   './',
   './index.html',
