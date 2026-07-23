@@ -1,5 +1,7 @@
 /* Validation du content.json au chargement (garde-fou des mises à jour annuelles) */
 
+const DEBRIEF_ITEMS_ATTENDUS = { d2: 6 };
+
 export function validateContent(c) {
   const errors = [];
   const need = (cond, msg) => { if (!cond) errors.push(msg); };
@@ -54,7 +56,11 @@ export function validateContent(c) {
       }
     }
     need(d.alerte && d.alerte.texte, `${d.id} : panneau d'alerte manquant`);
-    need(d.debrief && Array.isArray(d.debrief.items) && d.debrief.items.length === 5, `${d.id} : débriefing — 5 cases attendues`);
+    const nbEngagements = DEBRIEF_ITEMS_ATTENDUS[d.id] ?? 5;
+    need(
+      d.debrief && Array.isArray(d.debrief.items) && d.debrief.items.length === nbEngagements,
+      `${d.id} : débriefing — ${nbEngagements} cases attendues`
+    );
   }
 
   for (const [fid, f] of Object.entries(c.feuillets || {})) {

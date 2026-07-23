@@ -525,13 +525,14 @@
       },
       "debrief": {
         "titre": "Rapport de débriefing — Dossier 2",
-        "consigne": "L'agent certifie avoir compris — cochez les 5 engagements.",
+        "consigne": "L'agent certifie avoir compris — cochez les 6 engagements.",
         "items": [
           "Je remplirai mon contrat d'objectif sur 1J1A et le signerai avant la mi-novembre.",
           "Je confirmerai ma rencontre avec mon tuteur école et signerai le CR avant le 30/11.",
           "Je relancerai mon tuteur entreprise si l'évaluation n'est pas complétée avant les délais (28/02 et 30/08).",
           "J'adopterai une posture professionnelle en entreprise (ponctualité, tenue, communication, caméra en visio).",
-          "Je complèterai les fiches CLOE et enquêtes transmises par le CFA."
+          "Je complèterai les fiches 1 Jeune 1 Alternance.",
+          "Je complèterai les enquêtes transmises par le CFA."
         ]
       },
       "transition": {
