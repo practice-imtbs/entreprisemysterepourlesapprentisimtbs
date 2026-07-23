@@ -33,15 +33,16 @@
         "id": "sfp",
         "couleur": "orange",
         "periode": "Dès la rentrée si sans contrat",
-        "action": "Activer le statut SFP auprès du CFA (formulaire P2S / Typhaine MILLOT ou Adeline PUJOL).",
+        "action": "Activer le statut SFP auprès du CFA (formulaire P2S).",
         "consequence": "Délai : mi-novembre PGE / fin octobre Bachelor. Au-delà, les seules options sont la césure ou l'arrêt de formation.",
-        "echeanceParProgramme": { "bachelor": "fin octobre", "pge": "mi-novembre" }
+        "echeanceParProgramme": { "bachelor": "fin octobre", "pge": "mi-novembre" },
+        "contactParProgramme": { "bachelor": "Typhaine MILLOT", "pge": "Adeline PUJOL" }
       },
       {
         "id": "objectif",
         "couleur": "bleu",
         "periode": "Avant la mi-novembre",
-        "action": "Signer le contrat d'objectif sur 1J1A (3 signataires) ET la rencontre tuteur école (2 signataires).",
+        "action": "Réaliser et signer le contrat d'objectif sur 1 Jeune 1 Alternance (https://cfa-eve.1jeune1alternance.com/) (3 signataires) ET la rencontre tuteur école (2 signataires).",
         "consequence": "Sans ces documents : pas de protection en cas de litige."
       },
       {

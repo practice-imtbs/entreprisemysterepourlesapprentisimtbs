@@ -652,11 +652,14 @@ function openOverlay(title, sub, bodyNode) {
 function openCalendrier() {
   const list = el('div', { class: 'punaise-list' });
   for (const p of content.calendrier.punaises) {
+    const badgeParts = [];
+    if (p.contactParProgramme && state.programme) badgeParts.push(p.contactParProgramme[state.programme]);
+    if (p.echeanceParProgramme && state.programme) badgeParts.push(p.echeanceParProgramme[state.programme]);
     const detail = el('div', { class: 'pi-detail hidden' },
       el('span', {}, el('strong', { text: 'Action : ' }), p.action), el('br'),
       el('span', {}, el('strong', { text: 'En cas d’oubli : ' }), p.consequence),
-      p.echeanceParProgramme && state.programme
-        ? el('span', { class: 'pi-vous', text: `👉 Pour vous (${PROGRAMME_LABEL[state.programme]}) : ${p.echeanceParProgramme[state.programme]}` })
+      badgeParts.length
+        ? el('span', { class: 'pi-vous', text: `👉 Pour vous (${PROGRAMME_LABEL[state.programme]}) : ${badgeParts.join(' — ')}` })
         : ''
     );
     const item = el('button', { class: 'punaise-item', 'aria-expanded': 'false' },
