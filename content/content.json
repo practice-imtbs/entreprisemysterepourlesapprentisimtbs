@@ -158,10 +158,10 @@
       "num": 1,
       "type": "qcm",
       "multi": false,
-      "enonce": "C'est ton premier jour à l'école. Tu arrives et tu ne sais pas encore à qui t'adresser pour valider ton dossier. Vers qui te diriges-tu EN PREMIER ?",
+      "enonce": "C'est votre premier jour à l'école. Vous arrivez et vous ne savez pas encore à qui vous adresser pour valider votre dossier. Vers qui vous dirigez-vous EN PREMIER ?",
       "options": [
-        { "id": "A", "text": "Ton professeur principal" },
-        { "id": "B", "text": "Ta coordinatrice pédagogique" },
+        { "id": "A", "text": "Votre professeur principal" },
+        { "id": "B", "text": "Votre coordinatrice pédagogique" },
         { "id": "C", "text": "Le pôle alternance / service apprentissage" },
         { "id": "D", "text": "La direction de l'école" }
       ],
@@ -173,7 +173,7 @@
       "num": 2,
       "type": "qcm",
       "multi": false,
-      "enonce": "Pour justifier ta présence en cours, tu dois émarger sur une plateforme. Laquelle ?",
+      "enonce": "Pour justifier votre présence en cours, vous devez émarger sur une plateforme. Laquelle ?",
       "options": [
         { "id": "A", "text": "Moodle" },
         { "id": "B", "text": "Edusign" },
@@ -187,7 +187,7 @@
     "q3": {
       "num": 3,
       "type": "vraifaux",
-      "enonce": "Lors de l'émargement sur Edusign, tu peux signer avec tes initiales ou dessiner quelque chose à la place d'une vraie signature.",
+      "enonce": "Lors de l'émargement sur Edusign, vous pouvez signer avec vos initiales ou dessiner quelque chose à la place d'une vraie signature.",
       "correct": false,
       "indice": "Relisez la page 2 du dossier Edusign : quel type de signature est demandé ?",
       "retenir": "Il s'agit d'une signature officielle. Aucun dessin, initiales ou simple « OK » ne sont acceptés. Si la signature n'est pas conforme, l'émargement peut être invalidé et l'absence signalée à l'employeur."
@@ -195,11 +195,11 @@
     "q4": {
       "num": 4,
       "type": "ordre",
-      "enonce": "Tu es malade ce matin et tu ne peux pas venir en cours. Remets ces 4 actions dans le bon ordre.",
+      "enonce": "Vous êtes malade ce matin et vous ne pouvez pas venir en cours. Remettez ces 4 actions dans le bon ordre.",
       "items": [
         { "id": "A", "text": "Consulter un médecin — demander un ARRÊT DE TRAVAIL (pas un certificat)" },
-        { "id": "B", "text": "Prévenir ta coordinatrice pédagogique" },
-        { "id": "C", "text": "Prévenir ton employeur" },
+        { "id": "B", "text": "Prévenir votre coordinatrice pédagogique" },
+        { "id": "C", "text": "Prévenir votre employeur" },
         { "id": "D", "text": "Transmettre l'arrêt de travail via Edusign dans les 48h" }
       ],
       "correct": ["B", "C", "A", "D"],
@@ -214,7 +214,7 @@
         { "id": "A", "text": "RDV spécialiste un mardi (semaine école)" },
         { "id": "B", "text": "Convocation préfecture un jeudi (semaine école)" },
         { "id": "C", "text": "Enseignant passe le cours en visio à la dernière minute" },
-        { "id": "D", "text": "Tu arrives en retard de 20 min en cours" }
+        { "id": "D", "text": "Vous arrivez en retard de 20 min en cours" }
       ],
       "right": [
         { "id": "1", "text": "RDV à prendre sur une semaine entreprise (ne justifie pas une absence)" },
@@ -230,7 +230,7 @@
       "num": 6,
       "type": "qcm",
       "multi": false,
-      "enonce": "Ton justificatif d'absence doit être transmis sur Edusign et à l'employeur sous combien de temps ?",
+      "enonce": "Votre justificatif d'absence doit être transmis sur Edusign et à l'employeur sous combien de temps ?",
       "options": [
         { "id": "A", "text": "24 heures" },
         { "id": "B", "text": "48 heures" },
@@ -244,7 +244,7 @@
     "q7": {
       "num": 7,
       "type": "vraifaux",
-      "enonce": "Lorsque tu es en semaine de formation à l'école, tu es toujours considéré comme un salarié de ton entreprise.",
+      "enonce": "Lorsque vous êtes en semaine de formation à l'école, vous êtes toujours considéré comme un salarié de votre entreprise.",
       "correct": true,
       "indice": "Qui paie votre formation et vous verse un salaire, même pendant les cours ?",
       "retenir": "C'est une spécificité clé de l'apprentissage : l'employeur paie la formation et verse un salaire. L'apprenti est donc salarié même en cours, ce qui implique les mêmes obligations professionnelles (ponctualité, tenue, comportement) qu'en entreprise."
@@ -253,12 +253,12 @@
       "num": 8,
       "type": "qcm",
       "multi": false,
-      "enonce": "C'est ton premier jour en entreprise. Ton tuteur est absent toute la journée et personne ne t'a expliqué tes missions. Que fais-tu ?",
+      "enonce": "C'est votre premier jour en entreprise. Votre tuteur est absent toute la journée et personne ne vous a expliqué vos missions. Que faites-vous ?",
       "options": [
-        { "id": "A", "text": "Tu attends que quelqu'un vienne te voir" },
-        { "id": "B", "text": "Tu contactes le pôle alternance pour signaler le problème" },
-        { "id": "C", "text": "Tu prends l'initiative de contacter le manager ou les RH pour te présenter et demander les instructions" },
-        { "id": "D", "text": "Tu rentres chez toi car rien n'est prévu" }
+        { "id": "A", "text": "Vous attendez que quelqu'un vienne vous voir" },
+        { "id": "B", "text": "Vous contactez le pôle alternance pour signaler le problème" },
+        { "id": "C", "text": "Vous prenez l'initiative de contacter le manager ou les RH pour vous présenter et demander les instructions" },
+        { "id": "D", "text": "Vous rentrez chez vous car rien n'est prévu" }
       ],
       "correct": ["C"],
       "indice": "Quelle attitude montre votre proactivité dès le premier jour ?",
@@ -301,10 +301,10 @@
     "q11": {
       "num": 11,
       "type": "vraifaux",
-      "enonce": "Si tu n'as pas rempli ton contrat d'objectif et que tes missions ne correspondent pas à ce qui était prévu, le tuteur école peut quand même facilement défendre ta situation.",
+      "enonce": "Si vous n'avez pas rempli votre contrat d'objectif et que vos missions ne correspondent pas à ce qui était prévu, le tuteur école peut quand même facilement défendre votre situation.",
       "correct": false,
       "indice": "Sans document signé par toutes les parties, c'est parole contre parole.",
-      "retenir": "Sans contrat d'objectif signé, la situation devient « parole contre parole ». Avec le document signé par toutes les parties, le tuteur dispose d'une base officielle pour exiger le respect des engagements. Tu dois le remplir en premier, puis ton tuteur entreprise, avant la mi-novembre."
+      "retenir": "Sans contrat d'objectif signé, la situation devient « parole contre parole ». Avec le document signé par toutes les parties, le tuteur dispose d'une base officielle pour exiger le respect des engagements. Vous devez le remplir en premier, puis votre tuteur entreprise, avant la mi-novembre."
     },
     "q12": {
       "num": 12,
@@ -323,7 +323,7 @@
     "q13": {
       "num": 13,
       "type": "ordre",
-      "enonce": "Pour remplir ton contrat d'objectif, remets ces étapes dans le bon ordre.",
+      "enonce": "Pour remplir votre contrat d'objectif, remettez ces étapes dans le bon ordre.",
       "items": [
         { "id": "A", "text": "Signer le contrat d'objectif avant la mi-novembre" },
         { "id": "B", "text": "Se connecter sur 1 Jeune 1 Alternance" },
@@ -339,12 +339,12 @@
       "num": 14,
       "type": "qcm",
       "multi": false,
-      "enonce": "Ton manager te demande de rester jusqu'à 20h alors que tu as cours à 8h le lendemain (semaine école). Comment réagis-tu ?",
+      "enonce": "Votre manager vous demande de rester jusqu'à 20h alors que vous avez cours à 8h le lendemain (semaine école). Comment réagissez-vous ?",
       "options": [
-        { "id": "A", "text": "Tu restes sans rien dire pour faire bonne impression" },
-        { "id": "B", "text": "Tu expliques poliment que tu as cours le lendemain et que tu dois partir à une heure raisonnable" },
-        { "id": "C", "text": "Tu pars sans explication" },
-        { "id": "D", "text": "Tu demandes à ton tuteur d'appeler l'école pour justifier ton absence demain" }
+        { "id": "A", "text": "Vous restez sans rien dire pour faire bonne impression" },
+        { "id": "B", "text": "Vous expliquez poliment que vous avez cours le lendemain et que vous devez partir à une heure raisonnable" },
+        { "id": "C", "text": "Vous partez sans explication" },
+        { "id": "D", "text": "Vous demandez à votre tuteur d'appeler l'école pour justifier votre absence demain" }
       ],
       "correct": ["B"],
       "indice": "Les semaines école sont contractuelles — l'employeur connaît votre statut.",
@@ -354,11 +354,11 @@
       "num": 15,
       "type": "qcm",
       "multi": true,
-      "enonce": "Nexus Corp veut te garder une semaine entière alors que c'est ta semaine école. Ils évoquent un projet urgent. C'est légal ? Que fais-tu ? (plusieurs réponses)",
+      "enonce": "Nexus Corp veut vous garder une semaine entière alors que c'est votre semaine école. Ils évoquent un projet urgent. C'est légal ? Que faites-vous ? (plusieurs réponses)",
       "options": [
-        { "id": "A", "text": "Tu acceptes pour faire bonne impression" },
-        { "id": "B", "text": "Tu refuses catégoriquement sans explication" },
-        { "id": "C", "text": "Tu expliques que le planning est contractuel et tu alertes le pôle alternance" },
+        { "id": "A", "text": "Vous acceptez pour faire bonne impression" },
+        { "id": "B", "text": "Vous refusez catégoriquement sans explication" },
+        { "id": "C", "text": "Vous expliquez que le planning est contractuel et vous alertez le pôle alternance" },
         { "id": "D", "text": "Toute modification doit faire l'objet d'une demande écrite au service apprentissage au moins une semaine avant" }
       ],
       "correct": ["C", "D"],
@@ -368,13 +368,13 @@
     "q16": {
       "num": 16,
       "type": "ordre",
-      "enonce": "Tu n'as pas reçu ta rémunération ce mois-ci. Quelles étapes activer, dans le bon ordre ?",
+      "enonce": "Vous n'avez pas reçu votre rémunération ce mois-ci. Quelles étapes activer, dans le bon ordre ?",
       "items": [
         { "id": "A", "text": "Contacter le pôle alternance si la situation persiste" },
-        { "id": "B", "text": "Vérifier ton bulletin de salaire (absence injustifiée ? congé ?)" },
+        { "id": "B", "text": "Vérifier votre bulletin de salaire (absence injustifiée ? congé ?)" },
         { "id": "C", "text": "Contacter le tuteur entreprise ou les RH" },
         { "id": "D", "text": "Contacter le CFA (Typhaine MILLOT / Adeline PUJOL)" },
-        { "id": "E", "text": "Garder une trace écrite de toutes tes démarches" }
+        { "id": "E", "text": "Garder une trace écrite de toutes vos démarches" }
       ],
       "correct": ["B", "C", "A", "D", "E"],
       "indice": "Commencez toujours par vérifier votre bulletin de salaire.",
@@ -383,7 +383,7 @@
     "q17": {
       "num": 17,
       "type": "ordre",
-      "enonce": "Le dialogue est totalement rompu avec ton tuteur depuis plusieurs semaines. Tu te sens mis à l'écart et sans mission. Quels sont tes recours, et dans quel ordre les activer ?",
+      "enonce": "Le dialogue est totalement rompu avec votre tuteur depuis plusieurs semaines. Vous vous sentez mis à l'écart et sans mission. Quels sont vos recours, et dans quel ordre les activer ?",
       "items": [
         { "id": "A", "text": "Tenter un dialogue direct et calme avec le tuteur entreprise" },
         { "id": "B", "text": "Alerter le tuteur école (rencontre confidentielle — le tuteur entreprise n'a pas accès au CR)" },
@@ -411,7 +411,7 @@
     "q19": {
       "num": 19,
       "type": "vraifaux",
-      "enonce": "En cas de rupture de contrat, le pôle alternance et le CFA cessent de t'accompagner dans ta recherche d'entreprise.",
+      "enonce": "En cas de rupture de contrat, le pôle alternance et le CFA cessent de vous accompagner dans votre recherche d'entreprise.",
       "correct": false,
       "indice": "L'annuaire de l'agence 📞 le confirme : le pôle alternance reste à vos côtés.",
       "retenir": "En cas de rupture, le pôle alternance et le CFA continuent à accompagner l'apprenti, suivent ses avancées et transmettent des opportunités. Mais il faut se relancer immédiatement : en pleine année, trouver un nouvel employeur est très difficile. En PGE3/B3 : sans entreprise, pas de note, donc risque de prolongation de scolarité obligatoire."
@@ -420,7 +420,7 @@
       "num": 20,
       "type": "qcm",
       "multi": false,
-      "enonce": "Tu viens de signer ton contrat d'apprentissage. Que dois-tu faire concernant ta couverture sociale (Ameli) ?",
+      "enonce": "Vous venez de signer votre contrat d'apprentissage. Que devez-vous faire concernant votre couverture sociale (Ameli) ?",
       "options": [
         { "id": "A", "text": "Rien : l'école met mon dossier à jour automatiquement" },
         { "id": "B", "text": "Mettre à jour moi-même mon statut sur ameli.fr pour être couvert·e en tant que salarié·e" },
@@ -429,7 +429,7 @@
       ],
       "correct": ["B"],
       "indice": "Relisez le post-it vert du Dossier 1 : qui doit faire la démarche ?",
-      "retenir": "Le changement de statut sur Ameli est une démarche personnelle : personne ne la fera à ta place. Sans mise à jour, tu risques d'être mal couvert·e et mal remboursé·e en tant que salarié·e. À faire dès la signature du contrat."
+      "retenir": "Le changement de statut sur Ameli est une démarche personnelle : personne ne la fera à votre place. Sans mise à jour, vous risquez d'être mal couvert·e et mal remboursé·e en tant que salarié·e. À faire dès la signature du contrat."
     }
   },
 
@@ -448,7 +448,7 @@
       "pages": [
         { "titre": "Qu'est-ce que c'est ?", "texte": "Un rendez-vous confidentiel entre l'apprenti et son tuteur école. Le tuteur entreprise n'y a pas accès et n'aura pas accès au compte-rendu. C'est un espace de parole protégé." },
         { "titre": "Comment ça se passe ?", "texte": "Le tuteur école envoie un mail pour prendre RDV → confirmation de date → échange libre → le tuteur remplit et signe le CR sur 1J1A avant le 30/11 → l'apprenti lit et signe le CR avant le 30/11." },
-        { "titre": "Tu veux plus de confidentialité ?", "texte": "Il est possible de demander à fixer le RDV pendant une semaine école pour éviter d'être vu par le tuteur entreprise." },
+        { "titre": "Vous voulez plus de confidentialité ?", "texte": "Il est possible de demander à fixer le RDV pendant une semaine école pour éviter d'être vu par le tuteur entreprise." },
         { "titre": "Pourquoi c'est important ?", "texte": "C'est l'occasion de signaler des difficultés sans pression, d'ajuster avant que les problèmes ne s'accumulent, et de vérifier que les missions correspondent à ce qui était prévu." }
       ]
     },
@@ -474,12 +474,12 @@
         "titre": "Notes laissées par les agents précédents",
         "consigne": "Avant de commencer, retournez les 6 post-it laissés par vos prédécesseurs.",
         "items": [
-          { "id": "p1", "couleur": "jaune", "titre": "Tes droits fondamentaux", "texte": "Tu as le droit de te former gratuitement, d'être rémunéré et de bénéficier d'un double suivi (tuteur école + tuteur entreprise)." },
-          { "id": "p2", "couleur": "rose", "titre": "Tes congés", "texte": "2,5 jours de congés payés par mois travaillé + 5 jours de congés révision pour toute la durée du contrat." },
-          { "id": "p3", "couleur": "vert", "titre": "Ta couverture sociale", "texte": "Tu dois changer ton statut toi-même sur Ameli pour être correctement couvert. Ne l'oublie pas !" },
-          { "id": "p4", "couleur": "bleu", "titre": "Emprunter un PC portable", "texte": "Le CFA peut te prêter un PC portable. Demande à j.louchart@cfa-eve.fr" },
-          { "id": "p5", "couleur": "orange", "titre": "La carte étudiant des métiers", "texte": "Tu peux obtenir une carte étudiant des métiers. Renseigne-toi auprès du pôle apprentissage." },
-          { "id": "p6", "couleur": "jaune", "titre": "Avantages sociaux", "texte": "Tu peux bénéficier des avantages de l'entreprise (restauration, transport, culture...). Renseigne-toi auprès de ton employeur." }
+          { "id": "p1", "couleur": "jaune", "titre": "Vos droits fondamentaux", "texte": "Vous avez le droit de vous former gratuitement, d'être rémunéré et de bénéficier d'un double suivi (tuteur école + tuteur entreprise)." },
+          { "id": "p2", "couleur": "rose", "titre": "Vos congés", "texte": "2,5 jours de congés payés par mois travaillé + 5 jours de congés révision pour toute la durée du contrat." },
+          { "id": "p3", "couleur": "vert", "titre": "Votre couverture sociale", "texte": "Vous devez changer votre statut vous-même sur Ameli pour être correctement couvert·e. Ne l'oubliez pas !" },
+          { "id": "p4", "couleur": "bleu", "titre": "Emprunter un PC portable", "texte": "Le CFA peut vous prêter un PC portable. Demandez à j.louchart@cfa-eve.fr" },
+          { "id": "p5", "couleur": "orange", "titre": "La carte étudiant des métiers", "texte": "Vous pouvez obtenir une carte étudiant des métiers. Renseignez-vous auprès du pôle apprentissage." },
+          { "id": "p6", "couleur": "jaune", "titre": "Avantages sociaux", "texte": "Vous pouvez bénéficier des avantages de l'entreprise (restauration, transport, culture...). Renseignez-vous auprès de votre employeur." }
         ]
       },
       "zonesTitre": "Plan du campus — 4 zones à sécuriser",
@@ -492,7 +492,7 @@
       ],
       "alerte": {
         "titre": "Message prioritaire reçu du QG — À ne pas rater",
-        "texte": "Si tu arrives à la rentrée sans contrat signé et que tu as décidé de poursuivre tes recherches, tu dois OBLIGATOIREMENT activer le statut SFP (stagiaire de la formation professionnelle) en remplissant le formulaire P2S auprès de Typhaine MILLOT ou Adeline PUJOL au CFA. Sans ce statut, tu n'es pas couvert en cas d'accident. Délai max de recherche de l'alternance : mi-novembre (PGE) / fin octobre (Bachelor). Au-delà, les seules options sont la césure ou l'arrêt de formation.",
+        "texte": "Si vous arrivez à la rentrée sans contrat signé et que vous avez décidé de poursuivre vos recherches, vous devez OBLIGATOIREMENT activer le statut SFP (stagiaire de la formation professionnelle) en remplissant le formulaire P2S auprès de Typhaine MILLOT ou Adeline PUJOL au CFA. Sans ce statut, vous n'êtes pas couvert·e en cas d'accident. Délai max de recherche de l'alternance : mi-novembre (PGE) / fin octobre (Bachelor). Au-delà, les seules options sont la césure ou l'arrêt de formation.",
         "echeanceParProgramme": { "bachelor": "fin octobre", "pge": "mi-novembre" }
       },
       "debrief": {
@@ -562,7 +562,7 @@
       ],
       "alerte": {
         "titre": "Message prioritaire reçu du QG — À ne pas rater",
-        "texte": "Aucune atteinte à l'intégrité physique ou psychique n'est tolérée (Article 27 RI CFA) : menace, violence, harcèlement, outrage, discrimination. Si tu es témoin ou victime d'une telle situation, tu dois alerter SANS ATTENDRE Typhaine MILLOT / Adeline PUJOL au CFA ET le pôle alternance. Tu n'es jamais seul·e face à ces situations."
+        "texte": "Aucune atteinte à l'intégrité physique ou psychique n'est tolérée (Article 27 RI CFA) : menace, violence, harcèlement, outrage, discrimination. Si vous êtes témoin ou victime d'une telle situation, vous devez alerter SANS ATTENDRE Typhaine MILLOT / Adeline PUJOL au CFA ET le pôle alternance. Vous n'êtes jamais seul·e face à ces situations."
       },
       "messagesQG": [
         {
