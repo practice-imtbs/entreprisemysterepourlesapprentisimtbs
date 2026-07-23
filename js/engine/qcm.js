@@ -1,9 +1,9 @@
-/* Mécanique QCM — sélection simple ou multiple */
+/* Mécanique QCM — sélection simple ou multiple. Options affichées dans l'ordre du contenu (A, B, C, D…) par défaut. */
 import { el, shuffle } from '../ui.js';
 
 export function createQCM(q) {
   const selected = new Set();
-  const options = q.shuffle === false ? q.options : shuffle(q.options);
+  const options = q.shuffle ? shuffle(q.options) : q.options;
   const buttons = new Map();
 
   const list = el('div', { class: 'opt-list', role: 'group', 'aria-label': 'Options de réponse' });
