@@ -64,7 +64,7 @@
 
   "annuaire": {
     "titre": "L'annuaire de l'agence",
-    "sousTitre": "Répertoire confidentiel — 10 fiches contact",
+    "sousTitre": "Répertoire confidentiel — 8 fiches contact",
     "fiches": [
       {
         "id": "pole-alternance",
@@ -72,31 +72,18 @@
         "role": "1er interlocuteur",
         "quand": "Pour TOUTE question liée à l'apprentissage, avant les coordinatrices et les enseignants.",
         "priorite": true,
-        "email": "career-center@imt-bs.eu",
+        "email": "apprentissage@imt-bs.eu",
+        "bureau": "Bureau A08",
         "programmes": ["bachelor", "pge"]
-      },
-      {
-        "id": "millot",
-        "nom": "Typhaine MILLOT",
-        "role": "CFA — référente Bachelor",
-        "quand": "Questions administratives et financières, procédure de rupture, statut SFP — uniquement pour les Bachelors.",
-        "programmes": ["bachelor"]
       },
       {
         "id": "pujol",
         "nom": "Adeline PUJOL",
         "role": "CFA — référente PGE",
         "quand": "Questions administratives et financières, procédure de rupture, statut SFP — uniquement pour les PGE.",
+        "email": "a.pujol@cfa-eve.fr",
+        "tel": "06 24 14 04 02",
         "programmes": ["pge"]
-      },
-      {
-        "id": "cavard",
-        "nom": "Cassandra CAVARD",
-        "role": "Coordinatrice Bachelor",
-        "quand": "Suivi pédagogique, absences, justificatifs.",
-        "email": "cassandra.cavard@imt-bs.eu",
-        "tel": "01 60 76 47 29",
-        "programmes": ["bachelor"]
       },
       {
         "id": "marland",
@@ -133,6 +120,7 @@
         "nom": "Pôle de coordination pédagogique et d'accompagnement étudiant",
         "role": "Soutien étudiant",
         "quand": "Difficultés de tous ordres : financières, personnelles, santé.",
+        "email": "accompagnement@imt-bs.eu",
         "programmes": ["bachelor", "pge"]
       },
       {

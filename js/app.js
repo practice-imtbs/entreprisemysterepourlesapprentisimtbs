@@ -693,10 +693,11 @@ function openAnnuaire() {
         el('div', { class: 'f-nom', text: f.nom }),
         el('div', { class: 'f-role', text: f.role }),
         el('div', { class: 'f-quand', text: f.quand }),
-        (f.email || f.tel)
+        (f.email || f.tel || f.bureau)
           ? el('div', { class: 'f-coords' },
               f.email ? el('a', { href: 'mailto:' + f.email, text: '✉ ' + f.email }) : '',
-              f.tel ? el('a', { href: 'tel:' + f.tel.replace(/\s/g, ''), text: '☎ ' + f.tel }) : ''
+              f.tel ? el('a', { href: 'tel:' + f.tel.replace(/\s/g, ''), text: '☎ ' + f.tel }) : '',
+              f.bureau ? el('span', { class: 'f-bureau', text: '📍 ' + f.bureau }) : ''
             )
           : '',
         Array.isArray(f.coords)

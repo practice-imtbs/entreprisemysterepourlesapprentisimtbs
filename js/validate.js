@@ -11,7 +11,7 @@ export function validateContent(c) {
 
   need(Array.isArray(c.intro?.messages) && c.intro.messages.length >= 1, 'intro.messages manquant');
   need(Array.isArray(c.calendrier?.punaises) && c.calendrier.punaises.length === 5, 'calendrier : 5 punaises attendues');
-  need(Array.isArray(c.annuaire?.fiches) && c.annuaire.fiches.length === 10, 'annuaire : 10 fiches attendues');
+  need(Array.isArray(c.annuaire?.fiches) && c.annuaire.fiches.length === 8, 'annuaire : 8 fiches attendues');
 
   const questions = c.questions || {};
   for (const [qid, q] of Object.entries(questions)) {
