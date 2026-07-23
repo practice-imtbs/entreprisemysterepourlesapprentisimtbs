@@ -7,8 +7,11 @@ export function showAlerte(alerte, delaiSec, programme, onDone) {
   const btn = el('button', { class: 'btn-primary hidden', text: 'Bien reçu' });
   const wait = el('div', { class: 'a-wait', 'aria-live': 'polite' });
 
+  const texteProgramme = alerte.texteParProgramme && programme && alerte.texteParProgramme[programme];
+  const texte = texteProgramme || alerte.texte;
+
   let echeanceBox = null;
-  if (alerte.echeanceParProgramme && programme && alerte.echeanceParProgramme[programme]) {
+  if (!texteProgramme && alerte.echeanceParProgramme && programme && alerte.echeanceParProgramme[programme]) {
     echeanceBox = el('div', { class: 'a-echeance' },
       `👉 Votre échéance (${PROGRAMME_LABEL[programme]}) : ${alerte.echeanceParProgramme[programme]}`
     );
@@ -20,7 +23,7 @@ export function showAlerte(alerte, delaiSec, programme, onDone) {
         el('span', { class: 'a-beacon', 'aria-hidden': 'true' }),
         el('span', { text: '⚡ ' + alerte.titre })
       ),
-      el('p', { class: 'a-texte', text: alerte.texte }),
+      el('p', { class: 'a-texte', text: texte }),
       echeanceBox,
       wait,
       btn

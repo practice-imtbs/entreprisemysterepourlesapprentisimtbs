@@ -481,7 +481,11 @@
       ],
       "alerte": {
         "titre": "Message prioritaire reçu du QG — À ne pas rater",
-        "texte": "Si vous arrivez à la rentrée sans contrat signé et que vous avez décidé de poursuivre vos recherches, vous devez OBLIGATOIREMENT activer le statut SFP (stagiaire de la formation professionnelle) en remplissant le formulaire P2S auprès de Typhaine MILLOT ou Adeline PUJOL au CFA. Sans ce statut, vous n'êtes pas couvert·e en cas d'accident. Délai max de recherche de l'alternance : mi-novembre (PGE) / fin octobre (Bachelor). Au-delà, les seules options sont la césure ou l'arrêt de formation.",
+        "texte": "Si vous arrivez à la rentrée sans contrat signé et que vous avez décidé de poursuivre vos recherches, vous devez OBLIGATOIREMENT activer le statut SFP (stagiaire de la formation professionnelle) en remplissant le formulaire P2S auprès du CFA. Sans ce statut, vous n'êtes pas couvert·e en cas d'accident. Au-delà du délai, les seules options sont la césure ou l'arrêt de formation.",
+        "texteParProgramme": {
+          "bachelor": "Si vous arrivez à la rentrée sans contrat signé et que vous avez décidé de poursuivre vos recherches, vous devez OBLIGATOIREMENT activer le statut SFP (stagiaire de la formation professionnelle) en remplissant le formulaire P2S auprès de Typhaine MILLOT au CFA. Sans ce statut, vous n'êtes pas couvert·e en cas d'accident. Délai max de recherche de l'alternance : fin octobre. Au-delà, les seules options sont la césure ou l'arrêt de formation.",
+          "pge": "Si vous arrivez à la rentrée sans contrat signé et que vous avez décidé de poursuivre vos recherches, vous devez OBLIGATOIREMENT activer le statut SFP (stagiaire de la formation professionnelle) en remplissant le formulaire P2S auprès d'Adeline PUJOL au CFA. Sans ce statut, vous n'êtes pas couvert·e en cas d'accident. Délai max de recherche de l'alternance : mi-novembre. Au-delà, les seules options sont la césure ou l'arrêt de formation."
+        },
         "echeanceParProgramme": { "bachelor": "fin octobre", "pge": "mi-novembre" }
       },
       "debrief": {
